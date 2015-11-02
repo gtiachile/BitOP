@@ -2,8 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
 
-        .auto-style1 {
+        .auto-style10 {
             width: 86px;
+            color: #000000;
         }
     </style>
 </asp:Content>
@@ -27,7 +28,7 @@
             <InsertItemTemplate>
                 &nbsp;<table style="width:100%;">
                     <tr>
-                        <td class="auto-style1">Módulo:</td>
+                        <td class="auto-style10">Módulo:</td>
                         <td>
                             <asp:TextBox ID="ModuloTextBox" runat="server" Text='<%# Bind("Modulo") %>' />
                         </td>
@@ -36,7 +37,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style1">Descripción: </td>
+                        <td class="auto-style10">Descripción: </td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox0" runat="server" Height="22px" MaxLength="30" Text='<%# Bind("Descripción") %>' Width="243px" />
                         </td>
@@ -45,7 +46,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style1">Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList2" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -76,10 +77,10 @@
         </asp:FormView>
         </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Modulo" DataSourceID="BopDBModulos" EnableModelValidation="False">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Modulo" DataSourceID="BopDBModulos" EnableModelValidation="False" Width="60%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-                <asp:BoundField DataField="Modulo" HeaderText="Modulo" ReadOnly="True" SortExpression="Modulo" />
+                <asp:BoundField DataField="Modulo" HeaderText="Módulo" ReadOnly="True" SortExpression="Modulo" />
                 <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
                 <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                     <EditItemTemplate>
@@ -92,6 +93,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
         <asp:SqlDataSource ID="BopDBModulos" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Modulos] WHERE [Modulo] = @original_Modulo AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaModulo" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Modulos]" UpdateCommand="UPDATE [Modulos] SET [Descripción] = @Descripción, [Estado] = @Estado WHERE [Modulo] = @original_Modulo AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado" InsertCommandType="StoredProcedure">
             <DeleteParameters>

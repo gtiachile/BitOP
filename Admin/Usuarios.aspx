@@ -178,7 +178,7 @@
         <table style="width:100%;">
             <tr>
                 <td>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuariosGV" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuariosGV" Width="80%" >
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Usuario" HeaderText="Usuario" ReadOnly="True" SortExpression="Usuario" />
@@ -206,7 +206,7 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Pass") %>' Visible="False"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="UsuarioAD" SortExpression="UsuarioAD">
+            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Usuario AD" SortExpression="UsuarioAD">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox5" runat="server" MaxLength="50" Text='<%# Bind("UsuarioAD") %>' Width="80px"></asp:TextBox>
                 </EditItemTemplate>
@@ -214,7 +214,7 @@
                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("UsuarioAD") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="DominioAD" SortExpression="DominioAD">
+            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Dominio AD" SortExpression="DominioAD">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox6" runat="server" MaxLength="20" Text='<%# Bind("DominioAD") %>' Width="80px"></asp:TextBox>
                 </EditItemTemplate>
@@ -232,7 +232,7 @@
                     <asp:Label ID="Label5" runat="server" Text='<%# Eval("Perfil") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Expiracion" SortExpression="Expiracion">
+            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Expiración" SortExpression="Expiracion">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Expiracion") %>' TextMode="Date"></asp:TextBox>
                 </EditItemTemplate>
@@ -251,6 +251,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBUsuariosGV" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Usuarios] WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND (([Fecha Creación] = @original_Fecha_Creación) OR ([Fecha Creación] IS NULL AND @original_Fecha_Creación IS NULL)) AND [Estado] = @original_Estado" InsertCommand="INSERT INTO [Usuarios] ([Usuario], [Nombre], [eMail], [Pass], [Fecha Creación], [Estado]) VALUES (@Usuario, @Nombre, @eMail, @Pass, @Fecha_Creación, @Estado)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Usuarios]" UpdateCommand="UPDATE [Usuarios] SET [Nombre] = @Nombre, [eMail] = @eMail, [Pass] = @Pass, [Fecha Creación] = @Fecha_Creación, [Estado] = @Estado WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND (([Fecha Creación] = @original_Fecha_Creación) OR ([Fecha Creación] IS NULL AND @original_Fecha_Creación IS NULL)) AND [Estado] = @original_Estado">
         <DeleteParameters>

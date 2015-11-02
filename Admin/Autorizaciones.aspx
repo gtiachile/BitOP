@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Autorizaciones.aspx.cs" Inherits="BitOp.Admin.Autorizaciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .auto-style1 {
-            width: 163px;
-        }
         .auto-style2 {
             text-align: left;
         }
@@ -13,6 +10,9 @@
         .auto-style4 {
             width: 115px;
             text-align: center;
+        }
+        .auto-style10 {
+            width: 5px;
         }
     </style>
 </asp:Content>
@@ -27,20 +27,20 @@
     <p>
         <table style="width:100%;">
             <tr>
-                <td class="auto-style1" style="text-align: left">OPCIONES DISPONIBLES</td>
+                <td class="auto-style10" style="text-align: left">OPCIONES DISPONIBLES</td>
                 <td class="auto-style3" style="text-align: left">&nbsp;</td>
                 <td class="auto-style2">AUTORIZACIONES</td>
             </tr>
             <tr>
-                <td class="auto-style1" valign="top">
-                    <asp:GridView ID="GridViewAutDisp" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="130px">
+                <td class="auto-style10" valign="top">
+                    <asp:GridView ID="GridViewAutDisp" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="330px">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:CheckBox ID="AutorOnOff" runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Modulo" SortExpression="Modulo">
+                            <asp:TemplateField HeaderText="Módulo" SortExpression="Modulo">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Modulo") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -48,12 +48,13 @@
                                     <asp:Label ID="Modulo" runat="server" Text='<%# Bind("Modulo") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Opcion" SortExpression="Opcion">
+                            <asp:TemplateField HeaderText="Opción" SortExpression="Opcion">
                                 <ItemTemplate>
                                     <asp:Label ID="Opcion" runat="server" Text='<%# Bind("Opcion") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                 </td>
                 <td class="auto-style4" valign="middle">
@@ -69,14 +70,14 @@
                     <asp:Button ID="ButtonElimAll" runat="server" OnClick="ButtonElimAll_Click" Text="&lt;&lt;&lt;" />
                 </td>
                 <td valign="top">
-                    <asp:GridView ID="GridViewAutAsig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBAutorizaciones">
+                    <asp:GridView ID="GridViewAutAsig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBAutorizaciones" Width="330px">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:CheckBox ID="CheckBoxAut" runat="server" />
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Modulo" SortExpression="Modulo">
+                            <asp:TemplateField HeaderText="Módulo" SortExpression="Modulo">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Modulo") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -84,7 +85,7 @@
                                     <asp:Label ID="Modulo" runat="server" Text='<%# Bind("Modulo") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Opcion" SortExpression="Opcion">
+                            <asp:TemplateField HeaderText="Opción" SortExpression="Opcion">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Opcion") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -93,6 +94,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="BopDBAutorizaciones" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Autorizaciones] WHERE [uid] = @uid" InsertCommand="INSERT INTO [Autorizaciones] ([Modulo], [Opcion], [uid]) VALUES (@Modulo, @Opcion, @uid)" SelectCommand="SELECT [Modulo], [Opcion] FROM [Autorizaciones] WHERE ([Perfil] = @Perfil)" UpdateCommand="UPDATE [Autorizaciones] SET [Modulo] = @Modulo, [Opcion] = @Opcion WHERE [uid] = @uid">
                         <DeleteParameters>
@@ -115,7 +117,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">&nbsp;</td>
+                <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style3">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>

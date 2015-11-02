@@ -7,6 +7,10 @@
         .auto-style12 {
             width: 240px;
         }
+        .auto-style13 {
+            width: 63px;
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -36,7 +40,7 @@
                         <InsertItemTemplate>
                             <table style="border-width: thin; border-style: solid; width:100%;">
                                 <tr>
-                                    <td class="auto-style11">Usuario:</td>
+                                    <td class="auto-style13">Usuario:</td>
                                     <td class="auto-style12">
                                         <asp:DropDownList ID="DropDownListUsuario" runat="server" DataSourceID="BopDBUsuarios" DataTextField="Nombre" DataValueField="Usuario">
                                         </asp:DropDownList>
@@ -194,7 +198,7 @@
                         <Columns>
                             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/Cancel(build)_194_32.bmp" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                             <asp:BoundField DataField="Usuario" HeaderText="Usuario" ReadOnly="True" SortExpression="Usuario" />
-                            <asp:TemplateField HeaderText="Funcion" SortExpression="Funcion">
+                            <asp:TemplateField HeaderText="Función" SortExpression="Funcion">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" MaxLength="50" Text='<%# Bind("Funcion") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -277,7 +281,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
-                        <HeaderStyle BackColor="#364E6F" ForeColor="#CCCCCC" />
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />                        
                     </asp:GridView>
                     <asp:SqlDataSource ID="BopDBUsuarioFuncionDet" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [UsuarioFuncion] WHERE [Usuario] = @Usuario" InsertCommand="INSERT INTO [UsuarioFuncion] ([Usuario], [Funcion], [Area], [Turno]) VALUES (@Usuario, @Funcion, @Area, @Turno)" SelectCommand="SELECT * FROM [UsuarioFuncion]" UpdateCommand="UPDATE [UsuarioFuncion] SET [Funcion] = @Funcion, [Area] = @Area, [Turno] = @Turno, [NivelRegDetencion] = @NivelRegDetencion, [DiasAtrasoReg]=@DiasAtrasoReg WHERE [Usuario] = @Usuario">
                         <DeleteParameters>

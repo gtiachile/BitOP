@@ -90,7 +90,7 @@
         </asp:FormView>
         </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Centro" DataSourceID="BopDBCentros">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Centro" DataSourceID="BopDBCentros" Width="70%">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Centro" HeaderText="Centro" ReadOnly="True" SortExpression="Centro" />
@@ -114,6 +114,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBCentros" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Centros] WHERE [Centro] = @original_Centro AND [Descripción] = @original_Descripción AND [Dirección] = @original_Dirección AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaCENTROS" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Centro], [Descripción], [Dirección], [Estado] FROM [Centros]" UpdateCommand="UPDATE [Centros] SET [Descripción] = @Descripción, [Dirección] = @Dirección, [Estado] = @Estado WHERE [Centro] = @original_Centro AND [Descripción] = @original_Descripción AND [Dirección] = @original_Dirección AND [Estado] = @original_Estado" InsertCommandType="StoredProcedure">
         <DeleteParameters>

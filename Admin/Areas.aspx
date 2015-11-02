@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Areas.aspx.cs" Inherits="BitOp.Admin.Areas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>AREAS</h3>
@@ -24,7 +29,7 @@
         <InsertItemTemplate>
             <table style="width:100%;">
                 <tr>
-                    <td>Area:</td>
+                    <td class="auto-style10">Area:</td>
                     <td>
                         <asp:TextBox ID="AreaTextBox" runat="server" MaxLength="10" Text='<%# Bind("Area") %>' Width="51px" />
                     </td>
@@ -33,7 +38,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Descripción:</td>
+                    <td class="auto-style10">Descripción:</td>
                     <td>
                         <asp:TextBox ID="DescripciónTextBox" runat="server" MaxLength="20" Text='<%# Bind("Descripción") %>' Width="196px" />
                     </td>
@@ -42,16 +47,18 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Planta:</td>
+                    <td class="auto-style10">Planta:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BopDBPlantas" DataTextField="Descripción" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="BopDBPlantas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="BopDBPlantas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT null as [Planta], 'Seleccione Planta' as [Descripción]
+union
+SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>C.Costo:</td>
+                    <td class="auto-style10">C.Costo:</td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" MaxLength="10" Text='<%# Bind("CCosto") %>'></asp:TextBox>
                     </td>
@@ -60,7 +67,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Estado:</td>
+                    <td class="auto-style10">Estado:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList2" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                             <asp:ListItem>Activo</asp:ListItem>
@@ -114,7 +121,7 @@
     </asp:SqlDataSource>
 </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Area" DataSourceID="BopDBAreas" AllowPaging="True" AllowSorting="True">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Area" DataSourceID="BopDBAreas" AllowPaging="True" AllowSorting="True" Width="60%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Area" HeaderText="Area" ReadOnly="True" SortExpression="Area" />
@@ -150,6 +157,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
 </p>
 </asp:Content>
