@@ -4,6 +4,7 @@
 
         .auto-style3 {
             width: 230px;
+            color: #000000;
         }
         .auto-style2 {
             width: 221px;
@@ -30,7 +31,7 @@
             <InsertItemTemplate>
                 <table style="width: 98%;">
                     <tr>
-                        <td class="auto-style3">Codigo: </td>
+                        <td class="auto-style3">Código: </td>
                         <td class="auto-style2">
                             <asp:TextBox ID="CodigoTextBox" runat="server" MaxLength="2" Text='<%# Bind("Codigo") %>' Width="26px" />
                         </td>
@@ -78,10 +79,10 @@
         </asp:FormView>
         </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBFamiliaProductos">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBFamiliaProductos" Width="60%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-            <asp:BoundField DataField="Codigo" HeaderText="Codigo" ReadOnly="True" SortExpression="Codigo" />
+            <asp:BoundField DataField="Codigo" HeaderText="Código" ReadOnly="True" SortExpression="Codigo" />
             <asp:BoundField DataField="FamiliaProducto" HeaderText="Familia Producto" SortExpression="FamiliaProducto" />
             <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                 <EditItemTemplate>
@@ -94,6 +95,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBFamiliaProductos" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [FamiliaProductos] WHERE [Codigo] = @original_Codigo AND [FamiliaProducto] = @original_FamiliaProducto AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaFAMILIAPRODUCTOS" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [FamiliaProductos]" UpdateCommand="UPDATE [FamiliaProductos] SET [FamiliaProducto] = @FamiliaProducto, [Estado] = @Estado WHERE [Codigo] = @original_Codigo AND [FamiliaProducto] = @original_FamiliaProducto AND [Estado] = @original_Estado" InsertCommandType="StoredProcedure">
         <DeleteParameters>

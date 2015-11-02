@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Plantas.aspx.cs" Inherits="BitOp.Admin.Plantas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Plantas</h3>
@@ -24,7 +29,7 @@
         <InsertItemTemplate>
             <table style="width:100%;">
                 <tr>
-                    <td>Planta:</td>
+                    <td class="auto-style10">Planta:</td>
                     <td>
                         <asp:TextBox ID="PlantaTextBox" runat="server" Text='<%# Bind("Planta") %>' MaxLength="10" Width="71px" />
                     </td>
@@ -33,7 +38,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Descripción:</td>
+                    <td class="auto-style10">Descripción:</td>
                     <td>
                         <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' MaxLength="20" />
                     </td>
@@ -42,7 +47,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Centro:</td>
+                    <td class="auto-style10">Centro:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="BopDBCentros0" DataTextField="Centro" DataValueField="Centro" SelectedValue='<%# Bind("Centro") %>'>
                         </asp:DropDownList>
@@ -51,7 +56,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Estado: </td>
+                    <td class="auto-style10">Estado: </td>
                     <td>
                         <asp:DropDownList ID="DropDownList4" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                             <asp:ListItem>Activo</asp:ListItem>
@@ -85,7 +90,7 @@
     </asp:FormView>
 </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Planta" DataSourceID="BopDBPlantas">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Planta" DataSourceID="BopDBPlantas" Width="60%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="Planta" HeaderText="Planta" ReadOnly="True" SortExpression="Planta" />
@@ -113,6 +118,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
         <asp:SqlDataSource ID="BopDBPlantas" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Plantas] WHERE [Planta] = @original_Planta AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado AND [Centro] = @original_Centro" InsertCommand="p_ValidaInsertaPLANTAS" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Planta], [Descripción], [Estado], [Centro] FROM [Plantas]" UpdateCommand="UPDATE [Plantas] SET [Descripción] = @Descripción, [Estado] = @Estado, [Centro] = @Centro WHERE [Planta] = @original_Planta AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado AND [Centro] = @original_Centro" InsertCommandType="StoredProcedure">
             <DeleteParameters>

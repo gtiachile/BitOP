@@ -1,10 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Lineas.aspx.cs" Inherits="BitOp.Admin.Lineas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>LINEAS</h3>
     <p>
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="Linea" DataSourceID="BopDBLineas" DefaultMode="Insert">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="Linea" DataSourceID="BopDBLineas" DefaultMode="Insert" Width="221px">
             <EditItemTemplate>
                 Linea:
                 <asp:Label ID="LineaLabel1" runat="server" Text='<%# Eval("Linea") %>' />
@@ -24,19 +29,19 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Linea: </td>
+                        <td class="auto-style10">Línea: </td>
                         <td>
                             <asp:TextBox ID="LineaTextBox" runat="server" Text='<%# Bind("Linea") %>' MaxLength="10" Width="58px" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripción:</td>
+                        <td class="auto-style10">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' MaxLength="20" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Planta: </td>
+                        <td class="auto-style10">Planta: </td>
                         <td>
                             <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="BopDBPlantas0" DataTextField="Descripción" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                                 <asp:ListItem Selected="True">Activo</asp:ListItem>
@@ -47,7 +52,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Estado: </td>
+                        <td class="auto-style10">Estado: </td>
                         <td>
                             <asp:DropDownList ID="DropDownList5" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -80,10 +85,10 @@
         </asp:FormView>
         </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Linea" DataSourceID="BopDBLineas">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Linea" DataSourceID="BopDBLineas" Width="60%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" />
-                <asp:BoundField DataField="Linea" HeaderText="Linea" ReadOnly="True" SortExpression="Linea" />
+                <asp:BoundField DataField="Linea" HeaderText="Línea" ReadOnly="True" SortExpression="Linea" />
                 <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
                 <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
                     <EditItemTemplate>
@@ -120,6 +125,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
         <asp:SqlDataSource ID="BopDBLineas" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Lineas] WHERE [Linea] = @original_Linea AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado AND [Planta] = @original_Planta" InsertCommand="INSERT INTO [Lineas] ([Linea], [Descripción], [Estado], [Planta]) VALUES (@Linea, @Descripción, @Estado, @Planta)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [Linea], [Descripción], [Estado], [Planta] FROM [Lineas]" UpdateCommand="UPDATE [Lineas] SET [Descripción] = @Descripción, [Estado] = @Estado, [Planta] = @Planta WHERE [Linea] = @original_Linea AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado AND [Planta] = @original_Planta">
             <DeleteParameters>

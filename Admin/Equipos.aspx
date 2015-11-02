@@ -4,6 +4,13 @@
         .auto-style1 {
             height: 26px;
         }
+        .auto-style10 {
+            color: #000000;
+        }
+        .auto-style11 {
+            height: 26px;
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -29,7 +36,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Equipo:</td>
+                        <td class="auto-style10">Equipo:</td>
                         <td>
                             <asp:TextBox ID="EquipoTextBox" runat="server" Text='<%# Bind("Equipo") %>' Width="64px" />
                         </td>
@@ -38,7 +45,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripción:</td>
+                        <td class="auto-style10">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox" runat="server" MaxLength="30" Text='<%# Bind("Descripción") %>' Width="196px" />
                         </td>
@@ -47,7 +54,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style1">Proceso:</td>
+                        <td class="auto-style11">Proceso:</td>
                         <td class="auto-style1">
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BopDBProcesosFV" DataTextField="Descrip" DataValueField="Proceso" SelectedValue='<%# Bind("Proceso") %>'>
                             </asp:DropDownList>
@@ -56,7 +63,7 @@
                         <td class="auto-style1"></td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource1" DataTextField="Estado" DataValueField="Estado" SelectedValue='<%# Bind("Estado") %>'>
                             </asp:DropDownList>
@@ -107,7 +114,7 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Equipo" DataSourceID="BopDBEquipos">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Equipo" DataSourceID="BopDBEquipos" Width="70%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="Equipo" HeaderText="Equipo" ReadOnly="True" SortExpression="Equipo" />
@@ -135,6 +142,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>

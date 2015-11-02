@@ -8,6 +8,9 @@
             width: 356px;
             text-align: left;
         }
+        .auto-style11 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -54,35 +57,35 @@
         <InsertItemTemplate>
             <table style="width:100%;">
                 <tr>
-                    <td>Material:</td>
+                    <td class="auto-style11">Material:</td>
                     <td class="auto-style10">
                         <asp:TextBox ID="MaterialTextBox" runat="server" MaxLength="10" Text='<%# Bind("Material") %>' Width="38px" />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="MaterialTextBox" ErrorMessage="*Obligatorio" Font-Bold="False" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td>Proceso:</td>
+                    <td class="auto-style11">Proceso:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListProcesoFV" runat="server" DataSourceID="BopDBProcesosFV" DataTextField="Descripción" DataValueField="Proceso" SelectedValue='<%# Bind("Proceso") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="BopDBProcesosFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Proceso], [Descripción] FROM [Procesos]"></asp:SqlDataSource>
                     </td>
-                    <td>Peso Neto Caja:</td>
+                    <td class="auto-style11">Peso Neto Caja:</td>
                     <td>
                         <asp:TextBox ID="PesoNetoCajaTextBox" runat="server" Text='<%# Bind("PesoNetoCaja") %>' TextMode="Number" Width="70px" />
                     </td>
                 </tr>
                 <tr>
-                    <td>Producto:</td>
+                    <td class="auto-style11">Producto:</td>
                     <td class="auto-style10">
                         <asp:TextBox ID="ProductoTextBox" runat="server" MaxLength="50" Text='<%# Bind("Producto") %>' Width="224px" />
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ProductoTextBox" ErrorMessage="*Obligatorio" Font-Bold="False" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td>Familia:</td>
+                    <td class="auto-style11">Familia:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListFamiliaFV" runat="server" DataSourceID="BopDBFamiliasFV" DataTextField="FamiliaProducto" DataValueField="Codigo">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="BopDBFamiliasFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [FamiliaProducto] FROM [FamiliaProductos]"></asp:SqlDataSource>
                     </td>
-                    <td>Unidad:</td>
+                    <td class="auto-style11">Unidad:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListUnidadFV" runat="server" DataSourceID="BopDBUnidadFV" DataTextField="Descripcion" DataValueField="Unidad" SelectedValue='<%# Bind("Unidad") %>'>
                         </asp:DropDownList>
@@ -90,20 +93,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Marca:</td>
+                    <td class="auto-style11">Marca:</td>
                     <td class="auto-style10">
                         <asp:DropDownList ID="DropDownListMarcaFV" runat="server" DataSourceID="BopDBMarcasFV" DataTextField="Marca" DataValueField="Codigo" SelectedValue='<%# Bind("CodigoMarca") %>'>
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="BopDBMarcasFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [Marca] FROM [Marcas]"></asp:SqlDataSource>
                     </td>
-                    <td>Semielab.:</td>
+                    <td class="auto-style11">Semielab.:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListSemiFV" runat="server" SelectedValue='<%# Bind("IndSemielaborado") %>'>
                             <asp:ListItem>Si</asp:ListItem>
                             <asp:ListItem Selected="True">No</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td>Estado:</td>
+                    <td class="auto-style11">Estado:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListEstadoFV" runat="server">
                             <asp:ListItem>Activo</asp:ListItem>
@@ -112,17 +115,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Planta:</td>
+                    <td class="auto-style11">Planta:</td>
                     <td class="auto-style10">
                         <asp:DropDownList ID="DropDownListPlantaFV" runat="server" DataSourceID="BopDBPlantasFV" DataTextField="Descripción" DataValueField="Planta">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="BopDBPlantasFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                     </td>
-                    <td>PesoNeto:</td>
+                    <td class="auto-style11">PesoNeto:</td>
                     <td>
                         <asp:TextBox ID="PesoNetoTextBox" runat="server" Height="16px" Text='<%# Bind("PesoNeto") %>' TextMode="Number" Width="70px" />
                     </td>
-                    <td>Formato: </td>
+                    <td class="auto-style11">Formato: </td>
                     <td>
                         <asp:DropDownList ID="DropDownList8" runat="server" DataSourceID="BopDBFormatoFV" DataTextField="descr" DataValueField="Formato" SelectedValue='<%# Bind("Formato") %>'>
                         </asp:DropDownList>
@@ -213,10 +216,10 @@
     <asp:SqlDataSource ID="BopDBProductos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [FamiliaProducto] FROM [FamiliaProductos]"></asp:SqlDataSource>
 </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Material" DataSourceID="BopDBProdDet">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Material" DataSourceID="BopDBProdDet" Width="100%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-            <asp:BoundField DataField="Material" HeaderText="Mat." ReadOnly="True" SortExpression="Material" />
+            <asp:BoundField DataField="Material" HeaderText="Material" ReadOnly="True" SortExpression="Material" />
             <asp:TemplateField HeaderText="Producto" SortExpression="Producto">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Producto") %>' Width="100px"></asp:TextBox>
@@ -237,7 +240,7 @@
                     <asp:SqlDataSource ID="BopDBMarcasGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [Marca] FROM [Marcas]"></asp:SqlDataSource>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Plta" SortExpression="Planta">
+            <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownPlantaGV" runat="server" DataSourceID="BopDBPlantasGV" DataTextField="Planta" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                     </asp:DropDownList>
@@ -331,6 +334,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
         <RowStyle Font-Overline="False" Font-Size="Small" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBProdDet" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Productos] WHERE [Material] = @original_Material" InsertCommand="INSERT INTO [Productos] ([Material], [Producto], [CodigoMarca], [Planta], [Proceso], [CodigoFamilia], [IndSemielaborado], [PesoNeto], [PesoNetoCaja],[Unidad], [Estado], [Formato]) VALUES (@Material, @Producto, @CodigoMarca, @Planta, @Proceso, @CodigoFamilia, @IndSemielaborado, @PesoNeto, @PesoNetoCaja, @Estado, @Formato)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Material, Producto, CodigoMarca, Planta, Proceso, CodigoFamilia, IndSemielaborado, PesoNeto, PesoNetoCaja, Estado, Unidad, RTrim(Formato) as Formato FROM Productos WHERE (CodigoFamilia = @CodigoFamilia)" UpdateCommand="UPDATE [Productos] SET [Producto] = @Producto, [CodigoMarca] = @CodigoMarca, [Planta] = @Planta, [Proceso] = @Proceso, [CodigoFamilia] = @CodigoFamilia, [IndSemielaborado] = @IndSemielaborado, [PesoNeto] = @PesoNeto, [PesoNetoCaja] = @PesoNetoCaja, [Estado] = @Estado, [Formato]=@Formato WHERE [Material] = @original_Material">

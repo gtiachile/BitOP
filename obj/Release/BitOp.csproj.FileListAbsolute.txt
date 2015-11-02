@@ -88,3 +88,19 @@ C:\Users\Fernando\Dropbox\AUS\Repo1\Repo1\BitOP\obj\Release\RdlCompile.cache
 C:\Users\Fernando\Dropbox\AUS\Repo1\Repo1\BitOP\obj\Release\RdlCompile.compiled
 C:\Users\Fernando\Dropbox\AUS\Repo1\Repo1\BitOP\obj\Release\BitOP.dll
 C:\Users\Fernando\Dropbox\AUS\Repo1\Repo1\BitOP\obj\Release\BitOP.pdb
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOp.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOp.Properties.Resources.resources
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOp.csproj.GenerateResource.Cache
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOP.dll.licenses
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\RdlCompile.cache
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\RdlCompile.compiled
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\BitOP.dll.config
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\BitOP.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\BitOP.pdb
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOP.dll
+C:\Users\Andres\Documents\Visual Studio 2013\Projects\BitOP\BitOP\obj\Release\BitOP.pdb

@@ -5,9 +5,6 @@
             width: 99%;
             height: 198px;
         }
-        .auto-style14 {
-            height: 18px;
-        }
         .auto-style15 {
             height: 13px;
         }
@@ -16,10 +13,6 @@
         }
         .auto-style17 {
             height: 12px;
-            width: 261px;
-        }
-        .auto-style18 {
-            height: 18px;
             width: 261px;
         }
         .auto-style19 {
@@ -33,12 +26,67 @@
         .auto-style21 {
             height: 12px;
         }
+        .auto-style22 {
+            height: 11px;
+        }
+        .auto-style23 {
+            height: 11px;
+            width: 261px;
+        }
+        .auto-style24 {
+            height: 12px;
+            width: 173px;
+            color: #000000;
+        }
+        .auto-style25 {
+            height: 11px;
+            width: 173px;
+            color: #000000;
+        }
+        .auto-style26 {
+            height: 13px;
+            width: 173px;
+            color: #000000;
+        }
+        .auto-style27 {
+            height: 4px;
+            width: 173px;
+            color: #000000;
+        }
+        .auto-style28 {
+            height: 12px;
+            width: 318px;
+        }
+        .auto-style29 {
+            height: 11px;
+            width: 318px;
+        }
+        .auto-style30 {
+            height: 13px;
+            width: 318px;
+        }
+        .auto-style31 {
+            height: 4px;
+            width: 318px;
+        }
+        .auto-style32 {
+            height: 13px;
+            color: #000000;
+        }
+        .auto-style33 {
+            height: 11px;
+            color: #000000;
+        }
+        .auto-style34 {
+            height: 12px;
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>VARIABLES DE PROCESO</h3>
     <p>
-        <asp:FormView ID="FormView1" runat="server" DataKeyNames="Variable" DataSourceID="BopDBVariables" DefaultMode="Insert">
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="Variable" DataSourceID="BopDBVariables" DefaultMode="Insert" Width="90%">
             <EditItemTemplate>
                 Variable:
                 <asp:Label ID="VariableLabel1" runat="server" Text='<%# Eval("Variable") %>' />
@@ -67,51 +115,53 @@
             <InsertItemTemplate>
                 <table class="auto-style11">
                     <tr>
-                        <td class="auto-style21">Variable:</td>
+                        <td class="auto-style24">Variable:</td>
                         <td class="auto-style21">
                             <asp:TextBox ID="VariableTextBox" runat="server" MaxLength="10" Text='<%# Bind("Variable") %>' />
                         </td>
                         <td class="auto-style21">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="VariableTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
-                        <td class="auto-style21">Descripcion:</td>
+                        <td class="auto-style34">Descripción:</td>
                         <td class="auto-style17">
                             <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" Text='<%# Bind("Descripcion") %>' Width="200px" />
                         </td>
-                        <td class="auto-style17">
+                        <td class="auto-style28">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescripcionTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style14">Equipo:</td>
-                        <td class="auto-style14">
+                        <td class="auto-style25">Equipo:</td>
+                        <td class="auto-style22">
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BobDBEquiposFV" DataTextField="descripcion" DataValueField="Equipo" SelectedValue='<%# Bind("Equipo") %>'>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="BobDBEquiposFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Equipo], [Equipo]+' - '+[Descripción] as descripcion FROM [Equipos] where [Estado]='Activo'"></asp:SqlDataSource>
                         </td>
-                        <td class="auto-style14"></td>
-                        <td class="auto-style14">Unidad: </td>
-                        <td class="auto-style18">
+                        <td class="auto-style22"></td>
+                        <td class="auto-style33">Unidad: </td>
+                        <td class="auto-style23">
                             <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="BobDBUnidadesFV" DataTextField="Descripcion" DataValueField="Unidad" SelectedValue='<%# Bind("Unidad") %>'>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="BobDBUnidadesFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Unidad], [Descripcion] FROM [Unidades]"></asp:SqlDataSource>
                         </td>
-                        <td class="auto-style18">&nbsp;</td>
+                        <td class="auto-style29"></td>
                     </tr>
                     <tr>
-                        <td class="auto-style15">Límite Sup.:</td>
+                        <td class="auto-style26">Límite<br /> Superior:</td>
                         <td class="auto-style15">
                             <asp:TextBox ID="LimSupTextBox" runat="server" Height="16px" Text='<%# Bind("LimSup") %>' TextMode="Number" />
                         </td>
                         <td class="auto-style15">&nbsp;</td>
-                        <td class="auto-style15">Límite Inf.:</td>
+                        <td class="auto-style32">Límite
+                            <br />
+                            Inferior:</td>
                         <td class="auto-style19">
                             <asp:TextBox ID="LimInfTextBox" runat="server" Text='<%# Bind("LimInf") %>' TextMode="Number" />
                         </td>
-                        <td class="auto-style19">&nbsp;</td>
+                        <td class="auto-style30">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td class="auto-style16">Estado:</td>
+                        <td class="auto-style27">Estado:</td>
                         <td class="auto-style16">
                             <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -121,7 +171,7 @@
                         <td class="auto-style16">&nbsp;</td>
                         <td class="auto-style16"></td>
                         <td class="auto-style20"></td>
-                        <td class="auto-style20">&nbsp;</td>
+                        <td class="auto-style31">&nbsp;</td>
                     </tr>
                 </table>
                 <br />
@@ -182,7 +232,7 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Variable" DataSourceID="BopDBVariables">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Variable" DataSourceID="BopDBVariables" Width="80%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/Cancel.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:TemplateField HeaderText="Variable" SortExpression="Variable">
@@ -205,7 +255,7 @@
                         <asp:SqlDataSource ID="BopDBEquiposGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Equipo], [Descripción] FROM [Equipos] where estado='Activo'"></asp:SqlDataSource>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Descripcion" SortExpression="Descripcion">
+                <asp:TemplateField HeaderText="Descripción" SortExpression="Descripcion">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox2" runat="server" MaxLength="50" Text='<%# Bind("Descripcion") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -223,7 +273,7 @@
                         <asp:Label ID="Label4" runat="server" Text='<%# Bind("Unidad") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Lim.Sup." SortExpression="LimSup">
+                <asp:TemplateField HeaderText="Límite Sup." SortExpression="LimSup">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("LimSup") %>' TextMode="Number"></asp:TextBox>
                     </EditItemTemplate>
@@ -231,7 +281,7 @@
                         <asp:Label ID="Label5" runat="server" Text='<%# Bind("LimSup") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Lim.Inf." SortExpression="LimInf">
+                <asp:TemplateField HeaderText="Límite Inf." SortExpression="LimInf">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("LimInf") %>' TextMode="Number"></asp:TextBox>
                     </EditItemTemplate>
@@ -251,6 +301,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>

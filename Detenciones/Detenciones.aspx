@@ -438,7 +438,7 @@ SELECT [Causa], [Causa]+' - '+[Descripción] as descripcion FROM [CausasDetencio
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-        <HeaderStyle BackColor="#465767" ForeColor="#CCCCCC" />
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBDetencionesGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Detenciones] WHERE [NroDetencion] = @NroDetencion" InsertCommand="INSERT INTO [Detenciones] ([NroDetencion], [Equipo], [CodigoCausaPrimario], [CodigoCausaSecundario], [FechaDetencion], [InicioDetencion], [FinDetencion], [Observaciones], [Usuario], [FechaGrabacion]) VALUES (@NroDetencion, @Equipo, @CodigoCausaPrimario, @CodigoCausaSecundario, @FechaDetencion, @InicioDetencion, @FinDetencion, @Observaciones, @Usuario, @FechaGrabacion)" SelectCommand="p_detenciones_usuario" UpdateCommand="UPDATE [Detenciones] SET [Equipo] = @Equipo, [CodigoCausaPrimario] = @CodigoCausaPrimario, [CodigoCausaSecundario] = @CodigoCausaSecundario, [FechaDetencion] = @FechaDetencion, [InicioDetencion] = @InicioDetencion, [FinDetencion] = @FinDetencion, [Observaciones] = @Observaciones, [FechaGrabacion] = @FechaGrabacion WHERE [NroDetencion] = @NroDetencion" SelectCommandType="StoredProcedure">
         <DeleteParameters>

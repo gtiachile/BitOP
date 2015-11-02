@@ -4,6 +4,13 @@
         .auto-style10 {
             height: 26px;
         }
+        .auto-style11 {
+            color: #000000;
+        }
+        .auto-style12 {
+            height: 26px;
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -29,7 +36,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Centro:</td>
+                        <td class="auto-style11">Centro:</td>
                         <td>
                             <asp:TextBox ID="CentroTextBox" runat="server" Text='<%# Bind("Centro") %>' MaxLength="10" Width="26px" />
                         </td>
@@ -38,7 +45,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripción:</td>
+                        <td class="auto-style11">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' MaxLength="15" />
                         </td>
@@ -47,7 +54,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style10">Dirección:</td>
+                        <td class="auto-style12">Dirección:</td>
                         <td class="auto-style10">
                             <asp:TextBox ID="DirecciónTextBox0" runat="server" MaxLength="30" Text='<%# Bind("Dirección") %>' Width="239px" />
                         </td>
@@ -56,7 +63,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style11">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList2" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>

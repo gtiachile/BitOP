@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Secuencias.aspx.cs" Inherits="BitOp.Admin.Secuencias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>SECUENCIAS</h3>
@@ -24,7 +29,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Tipo:</td>
+                        <td class="auto-style10">Tipo:</td>
                         <td>
                             <asp:TextBox ID="tipoTextBox" runat="server" MaxLength="10" Text='<%# Bind("tipo") %>' Width="55px" />
                         </td>
@@ -33,7 +38,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Inicial:</td>
+                        <td class="auto-style10">Inicial:</td>
                         <td>
                             <asp:TextBox ID="inicialTextBox" runat="server" Text='<%# Bind("inicial") %>' TextMode="Number" />
                         </td>
@@ -42,7 +47,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Actual:</td>
+                        <td class="auto-style10">Actual:</td>
                         <td>
                             <asp:TextBox ID="actualTextBox" runat="server" Text='<%# Bind("actual") %>' TextMode="Number" />
                         </td>
@@ -51,7 +56,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Incremento:</td>
+                        <td class="auto-style10">Incremento:</td>
                         <td>
                             <asp:TextBox ID="incrementoTextBox" runat="server" Height="16px" Text='1' TextMode="Number" Width="46px" />
                         </td>
@@ -103,7 +108,7 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="tipo" DataSourceID="BopDBSecuencias">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="tipo" DataSourceID="BopDBSecuencias" Width="50%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/Cancel.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="tipo" HeaderText="Tipo" ReadOnly="True" SortExpression="tipo" />
@@ -111,6 +116,7 @@
                 <asp:BoundField DataField="actual" HeaderText="Actual" SortExpression="actual" />
                 <asp:BoundField DataField="incremento" HeaderText="Incremento" SortExpression="incremento" />
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>
