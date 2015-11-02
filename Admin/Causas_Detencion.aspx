@@ -84,7 +84,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">Estandar:</td>
+                    <td class="auto-style10">Estándar:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Estandar") %>'>
                             <asp:ListItem Selected="True">Si</asp:ListItem>
@@ -94,7 +94,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">Mantencion:</td>
+                    <td class="auto-style10">Mantención:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList4" runat="server" SelectedValue='<%# Bind("Mantencion") %>'>
                             <asp:ListItem Selected="True">Si</asp:ListItem>
@@ -175,7 +175,7 @@
                                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("Planificada") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Std." SortExpression="Estandar">
+                            <asp:TemplateField HeaderText="Estándar" SortExpression="Estandar">
                                 <EditItemTemplate>
                                     <asp:DropDownList ID="DropDownList8" runat="server" SelectedValue='<%# Bind("Estandar") %>'>
                                         <asp:ListItem>Si</asp:ListItem>

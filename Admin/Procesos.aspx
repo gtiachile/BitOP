@@ -8,7 +8,7 @@
             width: 2px;
         }
     .auto-style3 {
-        width: 322px;
+        width: 344px;
         border-style: solid;
         border-width: 1px;
     }
@@ -130,7 +130,7 @@
         </table>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Proceso" DataSourceID="BopDBProc" Width="70%">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Proceso" DataSourceID="BopDBProc" Width="70%" ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="Proceso" HeaderText="Proceso" ReadOnly="True" SortExpression="Proceso" />

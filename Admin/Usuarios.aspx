@@ -10,6 +10,18 @@
         .auto-style5 {
             width: 121px;
         }
+        .auto-style10 {
+            color: #000000;
+        }
+        .auto-style11 {
+            width: 121px;
+            height: 23px;
+            color: #000000;
+        }
+        .auto-style12 {
+            width: 48px;
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -43,40 +55,40 @@
         <InsertItemTemplate>
             <table style="width:100%;">
                 <tr>
-                    <td class="auto-style1">Usuario:</td>
+                    <td class="auto-style12">Usuario:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="UsuarioTextBox" runat="server" style="text-align: left" Text='<%# Bind("Usuario") %>' />
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="UsuarioTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style5">Usuario Dominio:</td>
+                    <td class="auto-style11">Usuario Dominio:</td>
                     <td class="auto-style1">
                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("UsuarioAD") %>'></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td>Nombre:</td>
+                    <td class="auto-style10">Nombre:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="NombreTextBox0" runat="server" Text='<%# Bind("Nombre") %>' />
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="NombreTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style5">Dominio:</td>
+                    <td class="auto-style11">Dominio:</td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("DominioAD") %>'></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td>Pass:</td>
+                    <td class="auto-style10">Password:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="PassTextBox0" runat="server" Text='<%# Bind("Pass") %>' TextMode="Password" />
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="PassTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style5">Perfil:</td>
+                    <td class="auto-style11">Perfil:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="BopDBPerfiles" DataTextField="Descripción" DataValueField="Perfil" SelectedValue='<%# Bind("Perfil") %>'>
                         </asp:DropDownList>
@@ -84,20 +96,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>eMail:</td>
+                    <td class="auto-style10">eMail:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="eMailTextBox0" runat="server" Height="16px" Text='<%# Bind("eMail") %>' Width="212px" />
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="eMailTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
-                    <td class="auto-style5">Fecha expiración:</td>
+                    <td class="auto-style11">Fecha expiración:</td>
                     <td>
                         <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Expiracion") %>' TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td>Estado:</td>
+                    <td class="auto-style10">Estado:</td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                             <asp:ListItem>Activo</asp:ListItem>
@@ -178,7 +190,7 @@
         <table style="width:100%;">
             <tr>
                 <td>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuariosGV" Width="80%" >
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuariosGV" Width="90%" >
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Usuario" HeaderText="Usuario" ReadOnly="True" SortExpression="Usuario" />
@@ -198,7 +210,7 @@
                     <asp:Label ID="Label8" runat="server" Text='<%# Bind("eMail") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Pass" SortExpression="Pass">
+            <asp:TemplateField HeaderText="Password" SortExpression="Pass">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Pass") %>' TextMode="Password" Width="80px"></asp:TextBox>
                 </EditItemTemplate>
