@@ -225,6 +225,7 @@
     <Content Include="Admin\UsuarioFuncion.aspx" />
     <Content Include="Admin\Usuarios.aspx" />
     <Content Include="Admin\Variables.aspx" />
+    <Content Include="App_Data\SQL\Mediciones.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -741,7 +742,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="App_Readme\Ext.NET.Utilities\" />
     <Folder Include="App_Readme\Transformer.NET\" />
     <Folder Include="App_Start\" />
