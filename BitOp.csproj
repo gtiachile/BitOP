@@ -590,8 +590,6 @@
     <Compile Include="Admin\Variables.aspx.designer.cs">
       <DependentUpon>Variables.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BopDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -746,6 +744,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Readme\Ext.NET.Utilities\" />
     <Folder Include="App_Readme\Transformer.NET\" />
+    <Folder Include="App_Start\" />
     <Folder Include="App_Themes\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
