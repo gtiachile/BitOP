@@ -44,7 +44,7 @@
                     <asp:SqlDataSource ID="BopDBModulos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT * FROM [Modulos] where estado='Activo'"></asp:SqlDataSource>
                     <br />
                 </td>
-                <td class="auto-style3" valign="top">Menu:<br class="auto-style4" />
+                <td class="auto-style3" valign="top">Menú:<br class="auto-style4" />
                     <asp:DropDownList ID="DropDownListMenu" runat="server" DataSourceID="BopDBOpcionesMenu" DataTextField="Descripción" DataValueField="Opcion">
                     </asp:DropDownList>
                     <br class="auto-style4" />
@@ -82,8 +82,8 @@
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowSelectButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />
-                            <asp:BoundField DataField="Posicion" HeaderText="Posicion" ReadOnly="True" SortExpression="Posicion" />
-                            <asp:TemplateField HeaderText="Modulo" SortExpression="Modulo">
+                            <asp:BoundField DataField="Posicion" HeaderText="Posición" ReadOnly="True" SortExpression="Posicion" />
+                            <asp:TemplateField HeaderText="Módulo" SortExpression="Modulo">
                                 <EditItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Modulo") %>'></asp:Label>
                                 </EditItemTemplate>
@@ -95,6 +95,7 @@
                         <selectedrowstyle backcolor="#4B6C9E"
                             forecolor="#CCCCCC"
                             font-bold="False"/> 
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="BopDBMenu_N0" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Menu_N0] WHERE [Perfil] = @Perfil AND [Posicion] = @Posicion AND [Modulo] = @Modulo" InsertCommand="INSERT INTO [Menu_N0] ([Perfil], [Posicion], [Modulo]) VALUES (@Perfil, @Posicion, @Modulo)" SelectCommand="SELECT * FROM [Menu_N0] WHERE ([Perfil] = @Perfil)">
                         <DeleteParameters>
@@ -117,9 +118,9 @@
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowSelectButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />
-                            <asp:BoundField DataField="Modulo" HeaderText="Modulo" ReadOnly="True" SortExpression="Modulo" Visible="False" />
-                            <asp:BoundField DataField="Posicion" HeaderText="Posicion" ReadOnly="True" SortExpression="Posicion" />
-                            <asp:TemplateField HeaderText="Opcion" SortExpression="Opcion">
+                            <asp:BoundField DataField="Modulo" HeaderText="Módulo" ReadOnly="True" SortExpression="Modulo" Visible="False" />
+                            <asp:BoundField DataField="Posicion" HeaderText="Posición" ReadOnly="True" SortExpression="Posicion" />
+                            <asp:TemplateField HeaderText="Opción" SortExpression="Opcion">
                                 <EditItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Opcion") %>'></asp:Label>
                                 </EditItemTemplate>
@@ -129,6 +130,7 @@
                             </asp:TemplateField>
                         </Columns>
                         <SelectedRowStyle BackColor="#4B6C9E" ForeColor="#CCCCCC" />
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="BopDBMenu_N1" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Menu_N1] WHERE [Perfil] = @Perfil AND [Modulo] = @Modulo AND [Posicion] = @Posicion AND [Opcion] = @Opcion" InsertCommand="INSERT INTO [Menu_N1] ([Perfil], [Modulo], [Posicion], [Opcion]) VALUES (@Perfil, @Modulo, @Posicion, @Opcion)" SelectCommand="SELECT [Perfil], [Modulo], [Posicion], [Opcion] FROM [Menu_N1] WHERE ([Perfil] = @Perfil and [Modulo]=@Modulo)">
                         <DeleteParameters>
@@ -154,12 +156,13 @@
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />
-                            <asp:BoundField DataField="Modulo" HeaderText="Modulo" ReadOnly="True" SortExpression="Modulo" Visible="False" />
-                            <asp:BoundField DataField="Posicion" HeaderText="Posicion" ReadOnly="True" SortExpression="Posicion" />
-                            <asp:BoundField DataField="Opcion1" HeaderText="Opcion1" ReadOnly="True" SortExpression="Opcion1" Visible="False" />
-                            <asp:BoundField DataField="Opcion2" HeaderText="Opcion2" ReadOnly="True" SortExpression="Opcion2" />
+                            <asp:BoundField DataField="Modulo" HeaderText="Módulo" ReadOnly="True" SortExpression="Modulo" Visible="False" />
+                            <asp:BoundField DataField="Posicion" HeaderText="Posición" ReadOnly="True" SortExpression="Posicion" />
+                            <asp:BoundField DataField="Opcion1" HeaderText="Opción1" ReadOnly="True" SortExpression="Opcion1" Visible="False" />
+                            <asp:BoundField DataField="Opcion2" HeaderText="Opción2" ReadOnly="True" SortExpression="Opcion2" />
                         </Columns>
                         <SelectedRowStyle BackColor="#4B6C9E" ForeColor="#CCCCCC" />
+                        <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="BopDBMenu_N2" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Menu_N2] WHERE [Perfil] = @Perfil AND [Modulo] = @Modulo AND [Posicion] = @Posicion AND [Opcion1] = @Opcion1 AND [Opcion2] = @Opcion2" InsertCommand="INSERT INTO [Menu_N2] ([Perfil], [Modulo], [Posicion], [Opcion1], [Opcion2]) VALUES (@Perfil, @Modulo, @Posicion, @Opcion1, @Opcion2)" SelectCommand="SELECT * FROM [Menu_N2] WHERE ([Perfil] = @Perfil and [Modulo] = @Modulo and Opcion1 = @Opcion)">
                         <DeleteParameters>

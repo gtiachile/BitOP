@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Turno_Planta.aspx.cs" Inherits="BitOp.Admin.Turno_Planta" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>TURNOS POR PLANTA</h3>
@@ -30,14 +35,14 @@
             <InsertItemTemplate>
                 &nbsp;<table style="width:100%;">
                     <tr>
-                        <td>Codigo:</td>
+                        <td class="auto-style10">Código:</td>
                         <td>
                             <asp:TextBox ID="CodigoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Codigo") %>' Width="76px" />
                         </td>
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CodigoTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
-                        <td>Descripción:</td>
+                        <td class="auto-style10">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox" runat="server" Text='<%# Bind("Descripción") %>' />
                         </td>
@@ -46,14 +51,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Planta:</td>
+                        <td class="auto-style10">Planta:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BopDBPlantasFV" DataTextField="Descripción" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="BopDBPlantasFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                         </td>
                         <td>&nbsp;</td>
-                        <td>Turno:</td>
+                        <td class="auto-style10">Turno:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="BopDBTurnos" DataTextField="Turno" DataValueField="Turno" SelectedValue='<%# Bind("Turno") %>'>
                             </asp:DropDownList>
@@ -62,14 +67,14 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Dotacion Est.:</td>
+                        <td class="auto-style10">Dotación Estándar:</td>
                         <td>
                             <asp:TextBox ID="DotacionStdTextBox" runat="server" Text='<%# Bind("DotacionStd") %>' TextMode="Number" Width="45px" />
                         </td>
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DotacionStdTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem Selected="True">Activo</asp:ListItem>
@@ -79,14 +84,14 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Hora inicio:</td>
+                        <td class="auto-style10">Hora inicio:</td>
                         <td>
                             <asp:TextBox ID="TextBox1" runat="server" MaxLength="5" Text='<%# Bind("HoraInicio") %>' Width="58px"></asp:TextBox>
                         </td>
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox1" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
-                        <td>Hora Fin:</td>
+                        <td class="auto-style10">Hora Fin:</td>
                         <td>
                             <asp:TextBox ID="TextBox2" runat="server" MaxLength="5" Text='<%# Bind("HoraFin") %>' Width="58px"></asp:TextBox>
                         </td>
@@ -152,10 +157,10 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBTurnosPlanta" Width="60%">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBTurnosPlanta" Width="80%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-                <asp:BoundField DataField="Codigo" HeaderText="Codigo" ReadOnly="True" SortExpression="Codigo" />
+                <asp:BoundField DataField="Codigo" HeaderText="Código" ReadOnly="True" SortExpression="Codigo" />
                 <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
                 <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
                     <EditItemTemplate>
@@ -179,7 +184,7 @@
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("Turno") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Dot.Est." SortExpression="DotacionStd">
+                <asp:TemplateField HeaderText="Dotación St." SortExpression="DotacionStd">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("DotacionStd") %>' TextMode="Number" Width="53px"></asp:TextBox>
                     </EditItemTemplate>
@@ -214,6 +219,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>

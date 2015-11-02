@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Marcas.aspx.cs" Inherits="BitOp.Admin.Marcas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>MARCAS</h3>
@@ -21,7 +26,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Codigo:</td>
+                        <td class="auto-style10">Código:</td>
                         <td>
                             <asp:TextBox ID="CodigoTextBox" runat="server" Text='<%# Bind("Codigo") %>' Width="18px" />
                         </td>
@@ -30,7 +35,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Marca:</td>
+                        <td class="auto-style10">Marca:</td>
                         <td>
                             <asp:TextBox ID="MarcaTextBox0" runat="server" Text='<%# Bind("Marca") %>' />
                         </td>
@@ -39,7 +44,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -69,10 +74,10 @@
         </asp:FormView>
         </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBMarcas">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Codigo" DataSourceID="BopDBMarcas" Width="60%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-            <asp:BoundField DataField="Codigo" HeaderText="Codigo" ReadOnly="True" SortExpression="Codigo" />
+            <asp:BoundField DataField="Codigo" HeaderText="Código" ReadOnly="True" SortExpression="Codigo" />
             <asp:BoundField DataField="Marca" HeaderText="Marca" SortExpression="Marca" />
             <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                 <EditItemTemplate>
@@ -85,6 +90,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBMarcas" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Marcas] WHERE [Codigo] = @original_Codigo AND [Marca] = @original_Marca AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaMARCAS" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Marcas]" UpdateCommand="UPDATE [Marcas] SET [Marca] = @Marca, [Estado] = @Estado WHERE [Codigo] = @original_Codigo AND [Marca] = @original_Marca AND [Estado] = @original_Estado" InsertCommandType="StoredProcedure">
         <DeleteParameters>

@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Unidades.aspx.cs" Inherits="BitOp.Admin.Unidades" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>UNIDADES DE MEDIDA</h3>
@@ -21,7 +26,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Unidad:</td>
+                        <td class="auto-style10">Unidad:</td>
                         <td>
                             <asp:TextBox ID="UnidadTextBox" runat="server" MaxLength="5" Text='<%# Bind("Unidad") %>' Width="60px" />
                         </td>
@@ -30,7 +35,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripcion: </td>
+                        <td class="auto-style10">Descripción: </td>
                         <td>
                             <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="15" Text='<%# Bind("Descripcion") %>' />
                         </td>
@@ -39,7 +44,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Tipo:</td>
+                        <td class="auto-style10">Tipo:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Tipo") %>'>
                                 <asp:ListItem>Producto</asp:ListItem>
@@ -49,7 +54,7 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -98,11 +103,11 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Unidad" DataSourceID="BopDBUnidades">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Unidad" DataSourceID="BopDBUnidades" Width="70%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="Unidad" HeaderText="Unidad" ReadOnly="True" SortExpression="Unidad" />
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion" />
                 <asp:TemplateField HeaderText="Tipo" SortExpression="Tipo">
                     <EditItemTemplate>
                         <asp:DropDownList ID="DropDownList4" runat="server" SelectedValue='<%# Bind("Tipo") %>'>
@@ -125,6 +130,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>

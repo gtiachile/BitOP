@@ -29,11 +29,12 @@
         </asp:FormView>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Turno" DataSourceID="BopDBTurnos">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Turno" DataSourceID="BopDBTurnos" Width="20%">
             <Columns>
                 <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" ShowDeleteButton="True" CausesValidation="False" />
                 <asp:BoundField DataField="Turno" HeaderText="Turno" ReadOnly="True" SortExpression="Turno" />
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
         <asp:SqlDataSource ID="BopDBTurnos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Turnos] WHERE [Turno] = @Turno" InsertCommand="p_ValidaInsertaTURNOS" SelectCommand="SELECT * FROM [Turnos]" InsertCommandType="StoredProcedure">
             <DeleteParameters>

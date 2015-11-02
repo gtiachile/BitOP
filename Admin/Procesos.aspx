@@ -12,6 +12,9 @@
         border-style: solid;
         border-width: 1px;
     }
+        .auto-style10 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -41,7 +44,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Proceso: </td>
+                        <td class="auto-style10">Proceso: </td>
                         <td>
                             <asp:TextBox ID="ProcesoTextBox" runat="server" Text='<%# Bind("Proceso") %>' />
                         </td>
@@ -50,7 +53,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripción: </td>
+                        <td class="auto-style10">Descripción: </td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' />
                         </td>
@@ -59,7 +62,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Area: </td>
+                        <td class="auto-style10">Area: </td>
                         <td>
                             <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="BopDBAreasForm" DataTextField="Descripción" DataValueField="Area" SelectedValue='<%# Bind("Area") %>'>
                             </asp:DropDownList>
@@ -68,7 +71,7 @@
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>Estado: </td>
+                        <td class="auto-style10">Estado: </td>
                         <td>
                             <asp:DropDownList ID="DropDownListEstado" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -127,7 +130,7 @@
         </table>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Proceso" DataSourceID="BopDBProc">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Proceso" DataSourceID="BopDBProc" Width="70%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
                 <asp:BoundField DataField="Proceso" HeaderText="Proceso" ReadOnly="True" SortExpression="Proceso" />
@@ -155,6 +158,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
     <p>

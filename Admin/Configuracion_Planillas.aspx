@@ -47,7 +47,7 @@
                     <InsertItemTemplate>
                         <table style="width:100%;">
                             <tr>
-                                <td>Titulo:</td>
+                                <td>Título:</td>
                                 <td colspan="7">
                                     <asp:TextBox ID="TituloTextBox0" runat="server" Text='<%# Bind("Titulo") %>' ValidationGroup="VG_Encabezado" Width="100%" />
                                 </td>
@@ -62,7 +62,7 @@
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="BopDBPlantasFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas] Where Estado='Activo'"></asp:SqlDataSource>
                                 </td>
-                                <td>Area;</td>
+                                <td>Area:</td>
                                 <td>
                                     <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="BopDBAreaFV" DataTextField="Descripción" DataValueField="Area" SelectedValue='<%# Bind("Area") %>'>
                                     </asp:DropDownList>
@@ -89,7 +89,7 @@ SELECT [Equipo], [Descripción] FROM [Equipos] where Estado='Activo'"></asp:SqlD
                                 <td>&nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style11">Días correción</td>
+                                <td class="auto-style11">Días corrección:</td>
                                 <td class="auto-style11">
                                     <asp:TextBox ID="DiasToleranciaIngTextBox0" runat="server" Text='<%# Bind("DiasToleranciaIng") %>' TextMode="Number" />
                                 </td>
@@ -167,7 +167,7 @@ SELECT [Equipo], [Descripción] FROM [Equipos] where Estado='Activo'"></asp:SqlD
                         <asp:Parameter Name="NroPlanilla" Type="Int64" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" Caption="Planillas Disponibles" DataKeyNames="NroPlanilla" DataSourceID="BopDBPlanillasMedicionEnc" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
+                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" Caption="Planillas Disponibles" DataKeyNames="NroPlanilla" DataSourceID="BopDBPlanillasMedicionEnc" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="80%">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -188,7 +188,7 @@ SELECT [Equipo], [Descripción] FROM [Equipos] where Estado='Activo'"></asp:SqlD
                                 <asp:Label ID="NroPlanilla" runat="server" Text='<%# Bind("NroPlanilla") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Titulo" SortExpression="Titulo">
+                        <asp:TemplateField HeaderText="Título" SortExpression="Titulo">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Titulo") %>'></asp:TextBox>
                             </EditItemTemplate>
@@ -262,7 +262,7 @@ union
 SELECT [Equipo], [Descripción] FROM [Equipos]"></asp:SqlDataSource>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Dias Ingreso" SortExpression="DiasToleranciaIng">
+                        <asp:TemplateField HeaderText="Días Ingreso" SortExpression="DiasToleranciaIng">
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("DiasToleranciaIng") %>' TextMode="Number"></asp:TextBox>
                             </EditItemTemplate>
@@ -282,6 +282,7 @@ SELECT [Equipo], [Descripción] FROM [Equipos]"></asp:SqlDataSource>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <HeaderStyle BackColor="#003366" ForeColor="White" />
                     <SelectedRowStyle Font-Bold="True" />
                 </asp:GridView>
                 <br />

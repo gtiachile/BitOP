@@ -111,7 +111,7 @@
     <asp:DropDownList ID="DropDownListFamiliaFil" runat="server" DataSourceID="BopDBFamiliasFiltro" DataTextField="FamiliaProducto" DataValueField="Codigo" AutoPostBack="True">
     </asp:DropDownList>
     <asp:SqlDataSource ID="BopDBFamiliasFiltro" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [FamiliaProducto] FROM [FamiliaProductos]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Formato,CodigoFamilia" DataSourceID="BopDBFormatosGV">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Formato,CodigoFamilia" DataSourceID="BopDBFormatosGV" Width="60%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Formato" HeaderText="Formato" ReadOnly="True" SortExpression="Formato" />
@@ -147,6 +147,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <br />
     <asp:SqlDataSource ID="BopDBFormatosGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Formatos] WHERE [Formato] = @Formato AND [CodigoFamilia] = @CodigoFamilia" InsertCommand="INSERT INTO [Formatos] ([Formato], [CodigoFamilia], [Rendimiento], [Estado]) VALUES (@Formato, @CodigoFamilia, @Rendimiento, @Estado)" SelectCommand="SELECT [Formato], [CodigoFamilia], [Rendimiento], [Estado] FROM [Formatos] WHERE ([CodigoFamilia] = @CodigoFamilia)" UpdateCommand="UPDATE [Formatos] SET [Rendimiento] = @Rendimiento, [Estado] = @Estado WHERE [Formato] = @Formato AND [CodigoFamilia] = @CodigoFamilia">

@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tipo_Incidente.aspx.cs" Inherits="BitOp.Admin.Tipo_Incidente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
@@ -22,7 +27,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Tipo Inicidente:</td>
+                        <td class="auto-style10">Tipo Incidente:</td>
                         <td>
                             <asp:TextBox ID="TipoInicidenteTextBox" runat="server" MaxLength="10" Text='<%# Bind("TipoInicidente") %>' Width="50px" />
                         </td>
@@ -31,7 +36,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripcion:</td>
+                        <td class="auto-style10">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripcionTextBox" runat="server" MaxLength="50" Text='<%# Bind("Descripcion") %>' />
                         </td>
@@ -40,7 +45,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>email alerta:</td>
+                        <td class="auto-style10">eMail alerta:</td>
                         <td>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("emailAlerta") %>'></asp:TextBox>
                         </td>
@@ -49,7 +54,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -98,12 +103,12 @@
         </asp:SqlDataSource>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="TipoInicidente" DataSourceID="BopDBTipoIncidente">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="TipoInicidente" DataSourceID="BopDBTipoIncidente" Width="60%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/Cancel(build)_194_32.bmp" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" InsertImageUrl="~/Images/NewRow.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
-                <asp:BoundField DataField="TipoInicidente" HeaderText="Tipo Inicidente" ReadOnly="True" SortExpression="TipoInicidente" />
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                <asp:TemplateField HeaderText="email Alerta" SortExpression="emailAlerta">
+                <asp:BoundField DataField="TipoInicidente" HeaderText="Tipo Incidente" ReadOnly="True" SortExpression="TipoInicidente" />
+                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" SortExpression="Descripcion" />
+                <asp:TemplateField HeaderText="eMail Alerta" SortExpression="emailAlerta">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("emailAlerta") %>' TextMode="Email"></asp:TextBox>
                     </EditItemTemplate>
@@ -123,6 +128,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
+            <HeaderStyle BackColor="#003366" ForeColor="White" />
         </asp:GridView>
     </p>
 </asp:Content>

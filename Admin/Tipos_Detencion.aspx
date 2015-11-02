@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Tipos_Detencion.aspx.cs" Inherits="BitOp.Admin.Tipos_Detencion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p>
@@ -22,7 +27,7 @@
             <InsertItemTemplate>
                 <table style="width:100%;">
                     <tr>
-                        <td>Tipo:</td>
+                        <td class="auto-style10">Tipo:</td>
                         <td>
                             <asp:TextBox ID="TipoTextBox" runat="server" MaxLength="2" Text='<%# Bind("Tipo") %>' Width="16px" />
                         </td>
@@ -31,7 +36,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Descripción:</td>
+                        <td class="auto-style10">Descripción:</td>
                         <td>
                             <asp:TextBox ID="DescripciónTextBox0" runat="server" MaxLength="30" Text='<%# Bind("Descripción") %>' />
                         </td>
@@ -40,7 +45,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Estado:</td>
+                        <td class="auto-style10">Estado:</td>
                         <td>
                             <asp:DropDownList ID="DropDownListEstado" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                 <asp:ListItem>Activo</asp:ListItem>
@@ -70,7 +75,7 @@
         </asp:FormView>
         </p>
 <p>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion" Width="60%">
         <Columns>
             <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
             <asp:BoundField DataField="Tipo" HeaderText="Tipo" ReadOnly="True" SortExpression="Tipo" />
@@ -86,6 +91,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBTipoDetencion" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [TipoDetencion] WHERE [Tipo] = @original_Tipo AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaTIPODETENCION" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [TipoDetencion]" UpdateCommand="UPDATE [TipoDetencion] SET [Descripción] = @Descripción, [Estado] = @Estado WHERE [Tipo] = @original_Tipo AND [Descripción] = @original_Descripción AND [Estado] = @original_Estado" InsertCommandType="StoredProcedure">
         <DeleteParameters>
