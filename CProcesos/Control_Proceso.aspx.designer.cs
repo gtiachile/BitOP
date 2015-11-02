@@ -148,30 +148,21 @@ namespace BitOp.CProcesos {
         protected global::System.Web.UI.WebControls.Label SelProceso;
         
         /// <summary>
-        /// Control FormView1.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// Control BopDBMediciones.
+        /// Control BopDBPlanillasMedicionEnc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource BopDBMediciones;
-        
-        /// <summary>
-        /// Control BopDBCProcesos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource BopDBCProcesos;
+        protected global::System.Web.UI.WebControls.SqlDataSource BopDBPlanillasMedicionEnc;
     }
 }

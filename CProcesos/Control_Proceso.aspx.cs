@@ -56,6 +56,7 @@ namespace BitOp.CProcesos
                 lblArea.Text = row["AreaDsc"].ToString();
                 lblPlanta.Text = row["PlantaDsc"].ToString();
                 SelPlanta.Text = row["Planta"].ToString();
+                SelProceso.Text = row["Area"].ToString();
                 lblEquipo.Text = row["DscEquipo"].ToString();
                 lblCodEquipo.Text = row["Equipo"].ToString();
                 lblTurno.Text = row["TurnoDsc"].ToString();

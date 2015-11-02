@@ -67,8 +67,8 @@
                     <asp:Label ID="lblLocalizacion" runat="server" Visible="False"></asp:Label>
                     <asp:Label ID="lblDiasAtr" runat="server" Visible="False"></asp:Label>
                     <asp:Label ID="lblUsuario" runat="server" Visible="False"></asp:Label>
-                    <asp:Label ID="SelPlanta" runat="server" Visible="False"></asp:Label>
-                    <asp:Label ID="SelArea" runat="server" Visible="False"></asp:Label>
+                    <asp:Label ID="SelPlanta" runat="server"></asp:Label>
+                    <asp:Label ID="SelArea" runat="server"></asp:Label>
                     <asp:Label ID="SelProceso" runat="server" Visible="False"></asp:Label>
                 </td>
             </tr>
@@ -82,11 +82,32 @@
                     &nbsp;</td>
             </tr>
         </table>
-
-                <asp:FormView ID="FormView1" runat="server" DataSourceID="BopDBMediciones">
-    </asp:FormView>
-    <asp:SqlDataSource ID="BopDBMediciones" runat="server"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="BopDBCProcesos" runat="server"></asp:SqlDataSource>
+    SELECCIONE TIPO DE PLANILLA
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBPlanillasMedicionEnc">
+                    <Columns>
+                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/Images/Select.png" ShowSelectButton="True" />
+                        <asp:BoundField DataField="Titulo" HeaderText="Planilla" SortExpression="Titulo" />
+                        <asp:BoundField DataField="Planta Dsc" HeaderText="Planta" SortExpression="Planta Dsc" />
+                        <asp:BoundField DataField="AreaDsc" HeaderText="Area" SortExpression="AreaDsc" />
+                        <asp:BoundField DataField="ProcesoDsc" HeaderText="Proceso" SortExpression="ProcesoDsc" />
+                        <asp:BoundField DataField="EquipoDsc" HeaderText="Equipo" SortExpression="EquipoDsc" />
+                    </Columns>
+                    <SelectedRowStyle BackColor="#4D6082" ForeColor="#CCCCCC" Width="60%" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="BopDBPlanillasMedicionEnc" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="
+SELECT        PlanillasMedicionEnc.Titulo, PlanillasMedicionEnc.Planta, Plantas.Descripción AS [Planta Dsc], PlanillasMedicionEnc.Area, Areas.Descripción AS AreaDsc, PlanillasMedicionEnc.Proceso, 
+                         Procesos.Descripción AS ProcesoDsc, PlanillasMedicionEnc.Equipo, Equipos.Equipo AS EquipoDsc, PlanillasMedicionEnc.DiasToleranciaIng, PlanillasMedicionEnc.Estado
+FROM            PlanillasMedicionEnc LEFT OUTER JOIN
+                         Areas ON PlanillasMedicionEnc.Area = Areas.Area LEFT OUTER JOIN
+                         Equipos ON PlanillasMedicionEnc.Equipo = Equipos.Equipo LEFT OUTER JOIN
+                         Procesos ON PlanillasMedicionEnc.Proceso = Procesos.Proceso LEFT OUTER JOIN
+                         Plantas ON PlanillasMedicionEnc.Planta = Plantas.Planta 
+WHERE PlanillasMedicionEnc.Planta=@Planta and PlanillasMedicionEnc.Area=@Area and PlanillasMedicionEnc.Estado='Activo'">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="SelPlanta" Name="Planta" PropertyName="Text" />
+            <asp:ControlParameter ControlID="SelProceso" Name="Area" PropertyName="Text" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     <br />
 
                 </asp:Content>
