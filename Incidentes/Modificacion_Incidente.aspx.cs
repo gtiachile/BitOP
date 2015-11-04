@@ -16,7 +16,7 @@ namespace BitOp.Incidentes
         {
             if (Page.IsPostBack != true)
             {
-                BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil);
+                if (!this.IsPostBack) { BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil); }
                 lblFecha.Text = DateTime.Today.ToString("dd-MM-yyyy");
                 lblResponsable.Text = BitOP.Global.Nombre;
                 Fill_User_Header();

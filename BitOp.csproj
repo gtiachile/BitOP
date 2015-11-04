@@ -236,6 +236,7 @@
     <Content Include="Detenciones\Detenciones.aspx" />
     <Content Include="Detenciones\reporte_detenciones.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\AddMark_10580_inverse.png" />
     <Content Include="Images\Cancel%28build%29_194_32.bmp" />
     <Content Include="Images\Cancel.png" />
     <Content Include="Images\clock.png" />

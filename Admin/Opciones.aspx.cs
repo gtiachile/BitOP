@@ -11,12 +11,45 @@ namespace BitOp.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil);                  
+            if (!this.IsPostBack) { BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil); }                  
         }
 
         protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
         {
 
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void ImageButton1_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void ImageButton2_Click1(object sender, ImageClickEventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
+        }
+
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
+        }
+
+        protected void InsertButton_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
+        }
+
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
+        }
+
+
+
     }
 }

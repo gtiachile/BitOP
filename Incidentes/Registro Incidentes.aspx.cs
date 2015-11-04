@@ -16,7 +16,7 @@ namespace BitOp.Incidentes
         {
             if (Page.IsPostBack != true)
             {
-                BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil);
+                if (!this.IsPostBack) { BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil); }
                 lblFecha.Text = DateTime.Today.ToString("dd-MM-yyyy");
                 lblResponsable.Text = BitOP.Global.Nombre;
                 Fill_User_Header();
@@ -145,7 +145,7 @@ namespace BitOp.Incidentes
         void PopulatePlantas(TreeNode node)
         {
             SqlCommand sqlQuery = new SqlCommand(
-                "Select [Descripción], Planta From Plantas");
+                "Select [Descripción], Planta From Plantas where estado='Activo'");
             DataSet resultSet;
             resultSet = RunQuery(sqlQuery);
             if (resultSet.Tables.Count > 0)
@@ -166,7 +166,7 @@ namespace BitOp.Incidentes
         {
             SqlCommand sqlQuery = new SqlCommand();
             sqlQuery.CommandText = "Select [Descripción],Area From Areas " +
-                " Where Planta = @Planta";
+                " Where Planta = @Planta and Estado='Activo'";
             sqlQuery.Parameters.Add("@Planta", SqlDbType.VarChar).Value =
                 node.Value;
             DataSet ResultSet = RunQuery(sqlQuery);
@@ -186,8 +186,8 @@ namespace BitOp.Incidentes
         void PopulateProcesos(TreeNode node)
         {
             SqlCommand sqlQuery = new SqlCommand();
-            sqlQuery.CommandText = "Select [Descripción], Proceso From Procesos " +
-                " Where Area = @Area";
+            sqlQuery.CommandText = "Select [Descripción], Proceso From Procesos" +
+                " Where Area = @Area and estado='Activo'";
             sqlQuery.Parameters.Add("@Area", SqlDbType.VarChar).Value =
                 node.Value;
             DataSet ResultSet = RunQuery(sqlQuery);

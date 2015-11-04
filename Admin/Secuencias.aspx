@@ -58,7 +58,7 @@
                     <tr>
                         <td class="auto-style10">Incremento:</td>
                         <td>
-                            <asp:TextBox ID="incrementoTextBox" runat="server" Height="16px" Text='1' TextMode="Number" Width="46px" />
+                            <asp:TextBox ID="incrementoTextBox" runat="server" Height="16px" Text='<%# Bind("Incremento") %>' TextMode="Number" Width="46px" />
                         </td>
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="incrementoTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>

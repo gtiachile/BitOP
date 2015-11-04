@@ -14,7 +14,7 @@ namespace BitOp.Planif
         {
             if (!Page.IsPostBack)
             { 
-                BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil);                  
+                if (!this.IsPostBack) { BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil); }                  
                 EmptyPanel.Visible = false;
                 TextBoxFechaLot0.Text = DateTime.Today.AddDays(2).ToString("yyyy-MM-dd");
                 TextBoxFechaProd.Text = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd");

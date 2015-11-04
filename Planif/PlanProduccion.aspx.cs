@@ -14,7 +14,7 @@ namespace BitOp.Planif
         {
             if (carga_inicial)
             { 
-            BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil);
+            if (!this.IsPostBack) { BitOP.Global.MenuControl.getMenu((Menu)Master.FindControl("NavigationMenu"), (Login)Master.FindControl("Login1"), BitOP.Global.Perfil); }
             carga_inicial = false;
             }
 //            TextBoxFechaInicio.Text = DateTime.Today.ToString("yyyy-MM-dd");
