@@ -22,6 +22,15 @@
             border-width: 1px;
             padding: 1px 4px;
         }
+        .auto-style10 {
+            height: 23px;
+            width: 287px;
+            border-width: 1px;
+            padding: 1px 4px;
+        }
+        .auto-style11 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -36,7 +45,7 @@
     <p>
         <table style="width: 75%;">
             <tr>
-                <td class="auto-style1" rowspan="2" valign="top">Módulo:<br class="auto-style4" />
+                <td class="auto-style1" rowspan="2" valign="top"><span class="auto-style11">Módulo:</span><br class="auto-style4" />
                     <asp:DropDownList ID="DropDownListModulo" runat="server" DataSourceID="BopDBModulos" DataTextField="Descripción" DataValueField="Modulo">
                     </asp:DropDownList>
                     <br class="auto-style4" />
@@ -44,14 +53,14 @@
                     <asp:SqlDataSource ID="BopDBModulos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT * FROM [Modulos] where estado='Activo'"></asp:SqlDataSource>
                     <br />
                 </td>
-                <td class="auto-style3" valign="top">Menú:<br class="auto-style4" />
+                <td class="auto-style3" valign="top"><span class="auto-style11">Menú:</span><br class="auto-style4" />
                     <asp:DropDownList ID="DropDownListMenu" runat="server" DataSourceID="BopDBOpcionesMenu" DataTextField="Descripción" DataValueField="Opcion">
                     </asp:DropDownList>
                     <br class="auto-style4" />
                     <asp:Button ID="ButtonAgrMenu" runat="server" style="margin-bottom: 0px" Text="Agregar" OnClick="ButtonAgrMenu_Click" />
                     <asp:SqlDataSource ID="BopDBOpcionesMenu" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Opcion], [Descripción] FROM [Opciones] where estado='Activo' and tipo='Menu' order by modulo,opcion"></asp:SqlDataSource>
                 </td>
-                <td class="auto-style5" rowspan="2" style="border-style: solid" valign="top">Opción:<br class="auto-style4" />
+                <td class="auto-style10" rowspan="2" style="border-style: solid" valign="top"><span class="auto-style11">Opción:</span><br class="auto-style4" />
                     <asp:DropDownList ID="DropDownListOpcionPagN2" runat="server" DataSourceID="BopDBOpcionPagN2" DataTextField="Descripción" DataValueField="Opcion">
                     </asp:DropDownList>
                     <br class="auto-style4" />
@@ -63,7 +72,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3" valign="top">Opción:<br class="auto-style4" />
+                <td class="auto-style3" valign="top"><span class="auto-style11">Opción:</span><br class="auto-style4" />
                     <asp:DropDownList ID="DropDownOpcionPag_N1" runat="server" DataSourceID="BopDBOpcionesPag_N1" DataTextField="Descripción" DataValueField="Opcion">
                     </asp:DropDownList>
                     <br class="auto-style4" />
@@ -71,14 +80,14 @@
                     <asp:SqlDataSource ID="BopDBOpcionesPag_N1" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Opcion], [Descripción] FROM [Opciones] where estado='Activo' and tipo='Pagina' order by modulo,opcion"></asp:SqlDataSource>
                 </td>
             </tr>
-            <tr>
+            <tr class="auto-style11">
                 <td class="auto-style1">Nivel 0</td>
                 <td class="auto-style3">Nivel 1</td>
-                <td class="auto-style5" style="border-style: solid" valign="top">Nivel 2</td>
+                <td class="auto-style10" style="border-style: solid" valign="top">Nivel 2</td>
             </tr>
             <tr>
                 <td class="auto-style1" valign="top">
-                    <asp:GridView ID="GridViewMenu_N0" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Posicion,Modulo" DataSourceID="BopDBMenu_N0" OnSelectedIndexChanged="GridViewMenu_N0_SelectedIndexChanged">
+                    <asp:GridView ID="GridViewMenu_N0" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Posicion,Modulo" DataSourceID="BopDBMenu_N0" OnSelectedIndexChanged="GridViewMenu_N0_SelectedIndexChanged" Width="230px">
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowSelectButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />
@@ -114,7 +123,7 @@
                     </asp:SqlDataSource>
                 </td>
                 <td class="auto-style3" valign="top">
-                    <asp:GridView ID="GridViewMenu_N1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Modulo,Posicion,Opcion" DataSourceID="BopDBMenu_N1" OnSelectedIndexChanged="GridViewMenu_N1_SelectedIndexChanged">
+                    <asp:GridView ID="GridViewMenu_N1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Modulo,Posicion,Opcion" DataSourceID="BopDBMenu_N1" OnSelectedIndexChanged="GridViewMenu_N1_SelectedIndexChanged" Width="230px">
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowSelectButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />
@@ -151,8 +160,8 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </td>
-                <td class="auto-style5" style="border-style: solid" valign="top">
-                    <asp:GridView ID="GridViewMenu_N2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Modulo,Posicion,Opcion1,Opcion2" DataSourceID="BopDBMenu_N2">
+                <td class="auto-style10" style="border-style: solid" valign="top">
+                    <asp:GridView ID="GridViewMenu_N2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style5" DataKeyNames="Perfil,Modulo,Posicion,Opcion1,Opcion2" DataSourceID="BopDBMenu_N2" Width="230px">
                         <Columns>
                             <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" />
                             <asp:BoundField DataField="Perfil" HeaderText="Perfil" ReadOnly="True" SortExpression="Perfil" Visible="False" />

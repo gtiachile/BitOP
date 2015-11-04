@@ -12,28 +12,46 @@
             text-align: center;
         }
         .auto-style10 {
-            width: 5px;
+            width: 61px;
+        }
+        .auto-style11 {
+            text-align: left;
+            width: 302px;
+            color: #000000;
+            font-weight: bold;
+        }
+        .auto-style12 {
+            width: 61px;
+            color: #000000;
+            font-weight: bold;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h3>AUTORIZACIONES</h3>
     <p>
-        <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="BopDBPerfiles" DataTextField="Descripción" DataValueField="Perfil">
+        <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="BopDBPerfiles" DataTextField="Descripción" DataValueField="Perfil" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="BopDBPerfiles" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Perfil], [Descripción] FROM [Perfiles]"></asp:SqlDataSource>
     </p>
-                    <asp:SqlDataSource ID="BopDBOpciones" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT * FROM [Opciones] WHERE Estado='Activo' order by modulo, opcion"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="BopDBOpciones" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT * FROM [Opciones] 
+  WHERE Estado='Activo'
+      and opcion not in (SELECT [Opcion] FROM [Autorizaciones] WHERE [Perfil] = @Perfil)
+order by modulo, opcion">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="DropDownListPerfil" Name="Perfil" PropertyName="SelectedValue" />
+                        </SelectParameters>
+    </asp:SqlDataSource>
     <p>
-        <table style="width:100%;">
+        <table style="width:80%;">
             <tr>
-                <td class="auto-style10" style="text-align: left">OPCIONES DISPONIBLES</td>
+                <td class="auto-style12" style="text-align: left">OPCIONES DISPONIBLES</td>
                 <td class="auto-style3" style="text-align: left">&nbsp;</td>
-                <td class="auto-style2">AUTORIZACIONES</td>
+                <td class="auto-style11">AUTORIZACIONES</td>
             </tr>
             <tr>
                 <td class="auto-style10" valign="top">
-                    <asp:GridView ID="GridViewAutDisp" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="330px">
+                    <asp:GridView ID="GridViewAutDisp" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="330px" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -70,7 +88,7 @@
                     <asp:Button ID="ButtonElimAll" runat="server" OnClick="ButtonElimAll_Click" Text="&lt;&lt;&lt;" />
                 </td>
                 <td valign="top">
-                    <asp:GridView ID="GridViewAutAsig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBAutorizaciones" Width="330px">
+                    <asp:GridView ID="GridViewAutAsig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBAutorizaciones" Width="330px" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField>
                                 <ItemTemplate>

@@ -52,6 +52,7 @@ namespace BitOp.Admin
             }
             con.Close();
             GridViewAutAsig.DataBind();
+            GridViewAutDisp.DataBind();
         }
 
         protected void ButtonElimAut_Click(object sender, EventArgs e)
@@ -77,7 +78,7 @@ namespace BitOp.Admin
             }
             con2.Close();
             GridViewAutAsig.DataBind();
-
+            GridViewAutDisp.DataBind();
         }
 
         protected void ButtonAgrAll_Click(object sender, EventArgs e)
@@ -94,6 +95,7 @@ namespace BitOp.Admin
             cmd.ExecuteNonQuery();
             con.Close();
             GridViewAutAsig.DataBind();
+            GridViewAutDisp.DataBind();
         }
 
         protected void ButtonElimAll_Click(object sender, EventArgs e)
@@ -107,7 +109,8 @@ namespace BitOp.Admin
             cmd.CommandText = "DELETE FROM [dbo].[Autorizaciones] WHERE Perfil ='" + Perfil.Trim() + "'";
             cmd.ExecuteNonQuery();
             con.Close();
-            GridViewAutAsig.DataBind();        
+            GridViewAutAsig.DataBind();
+            GridViewAutDisp.DataBind();
         }
 
     }

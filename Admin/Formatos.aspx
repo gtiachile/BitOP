@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Formatos.aspx.cs" Inherits="BitOp.Admin.Formatos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     FORMATOS DE PRODUCTO<br />
@@ -23,7 +28,7 @@
         <InsertItemTemplate>
             <table style="width:100%;">
                 <tr>
-                    <td>Formato:</td>
+                    <td class="auto-style10">Formato:</td>
                     <td>
                         <asp:TextBox ID="FormatoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Formato") %>' />
                     </td>
@@ -32,7 +37,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Familia:</td>
+                    <td class="auto-style10">Familia:</td>
                     <td>
                         <asp:DropDownList ID="DropDownListFamiliaFV" runat="server" DataSourceID="BopDBFamiliasFV" DataTextField="FamiliaProducto" DataValueField="Codigo" SelectedValue='<%# Bind("CodigoFamilia") %>'>
                         </asp:DropDownList>
@@ -41,7 +46,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Rendimiento:</td>
+                    <td class="auto-style10">Rendimiento:</td>
                     <td>
                         <asp:TextBox ID="RendimientoTextBox" runat="server" Text='<%# Bind("Rendimiento") %>' TextMode="Number" />
                     </td>
@@ -50,7 +55,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Estado:</td>
+                    <td class="auto-style10">Estado:</td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                             <asp:ListItem>Activo</asp:ListItem>
