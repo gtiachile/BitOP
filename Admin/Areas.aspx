@@ -123,7 +123,16 @@ SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
 <p>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Area" DataSourceID="BopDBAreas" AllowPaging="True" AllowSorting="True" Width="60%">
         <Columns>
-            <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" ImageUrl="~/Images/saveHS.png" Text="Update" />
+                    &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/Images/StopHS.png" Text="Cancel" />
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/EditTableHS.png" Text="Edit" />
+                    &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Images/DeleteHS.png" Text="Delete" OnClientClick="return confirm('¿Está seguro que desea eliminar?'); " />
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="Area" HeaderText="Area" ReadOnly="True" SortExpression="Area" />
             <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
             <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
