@@ -29,6 +29,11 @@ namespace BitOp.Admin
             MultiView1.ActiveViewIndex = 0;
         }
 
+        protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
 
     }
 }

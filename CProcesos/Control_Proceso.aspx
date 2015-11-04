@@ -18,6 +18,14 @@
         .auto-style46 {
             width: 56px;
         }
+        .auto-style47 {
+            width: 77px;
+            color: #000000;
+        }
+        .auto-style48 {
+            width: 56px;
+            color: #000000;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -25,11 +33,11 @@
         CONDICIONES DE PROCESO</p>
         <table style="border-style: solid; border-width: thin; width:100%;">
             <tr>
-                <td class="auto-style10">Fecha:</td>
+                <td class="auto-style47">Fecha:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblFecha" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Planta:</td>
+                <td class="auto-style47">Planta:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblPlanta" runat="server" Text="Label"></asp:Label>
                     </strong></td>
@@ -39,25 +47,25 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style10">Responsable:</td>
+                <td class="auto-style47">Responsable:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblResponsable" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Area:</td>
+                <td class="auto-style47">Area:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblArea" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style46">Equipo:</td>
+                <td class="auto-style48">Equipo:</td>
                 <td><strong>
                     <asp:Label ID="lblEquipo" runat="server" Text="Label"></asp:Label>
                     </strong></td>
             </tr>
             <tr>
-                <td class="auto-style10">Cargo:</td>
+                <td class="auto-style47">Cargo:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblCargo" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Turno:</td>
+                <td class="auto-style47">Turno:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblTurno" runat="server" Text="Label"></asp:Label>
                     </strong></td>
@@ -83,7 +91,7 @@
             </tr>
         </table>
     SELECCIONE TIPO DE PLANILLA
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBPlanillasMedicionEnc">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBPlanillasMedicionEnc" Width="70%">
                     <Columns>
                         <asp:CommandField ButtonType="Image" SelectImageUrl="~/Images/Select.png" ShowSelectButton="True" />
                         <asp:BoundField DataField="Titulo" HeaderText="Planilla" SortExpression="Titulo" />
@@ -92,6 +100,7 @@
                         <asp:BoundField DataField="ProcesoDsc" HeaderText="Proceso" SortExpression="ProcesoDsc" />
                         <asp:BoundField DataField="EquipoDsc" HeaderText="Equipo" SortExpression="EquipoDsc" />
                     </Columns>
+                    <HeaderStyle BackColor="#003366" ForeColor="White" />
                     <SelectedRowStyle BackColor="#4D6082" ForeColor="#CCCCCC" Width="60%" />
     </asp:GridView>
     <asp:SqlDataSource ID="BopDBPlanillasMedicionEnc" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="

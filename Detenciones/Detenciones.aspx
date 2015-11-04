@@ -5,12 +5,14 @@
 
         .auto-style10 {
             width: 81px;
+            color: #000000;
         }
         .auto-style11 {
             width: 203px;
         }
         .auto-style12 {
             width: 77px;
+            color: #000000;
         }
         .auto-style45 {
             width: 132px;
@@ -82,6 +84,11 @@
         border: 1px solid #5C5C5C;
     }
 
+        .auto-style54 {
+            width: 56px;
+            color: #000000;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -111,7 +118,7 @@
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblArea" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style46">Equipo:</td>
+                <td class="auto-style54">Equipo:</td>
                 <td><strong>
                     <asp:Label ID="lblEquipo" runat="server" Text="Label"></asp:Label>
                     </strong></td>

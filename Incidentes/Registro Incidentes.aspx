@@ -83,6 +83,15 @@
         height: 25px;
     }
 
+        .auto-style56 {
+            width: 77px;
+            color: #000000;
+        }
+        .auto-style57 {
+            width: 56px;
+            color: #000000;
+        }
+
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -111,11 +120,11 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style10">Fecha:</td>
+                <td class="auto-style56">Fecha:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblFecha" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Planta:</td>
+                <td class="auto-style56">Planta:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblPlanta" runat="server" Text="Label"></asp:Label>
                     </strong></td>
@@ -125,25 +134,25 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style10">Responsable:</td>
+                <td class="auto-style56">Responsable:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblResponsable" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Area:</td>
+                <td class="auto-style56">Area:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblArea" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style46">Equipo:</td>
+                <td class="auto-style57">Equipo:</td>
                 <td><strong>
                     <asp:Label ID="lblEquipo" runat="server" Text="Label"></asp:Label>
                     </strong></td>
             </tr>
             <tr>
-                <td class="auto-style10">Cargo:</td>
+                <td class="auto-style56">Cargo:</td>
                 <td class="auto-style11"><strong>
                     <asp:Label ID="lblCargo" runat="server" Text="Label"></asp:Label>
                     </strong></td>
-                <td class="auto-style12">Turno:</td>
+                <td class="auto-style56">Turno:</td>
                 <td class="auto-style45"><strong>
                     <asp:Label ID="lblTurno" runat="server" Text="Label"></asp:Label>
                     </strong></td>

@@ -20,9 +20,6 @@
         .auto-style10 {
             width: 359px;
         }
-        .auto-style12 {
-            width: 395px;
-        }
         .auto-style13 {
             width: 394px;
         }
@@ -55,6 +52,14 @@
         }
         .auto-style23 {
             width: 308px;
+        }
+        .auto-style24 {
+            width: 178px;
+            color: #000000;
+            margin-left: 78px;
+        }
+        .auto-style25 {
+            color: #000000;
         }
     </style>
 </asp:Content>
@@ -119,7 +124,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style9">Fecha Producción:
+                <td class="auto-style24">Fecha Producción:
                     &nbsp;&nbsp;</td>
                 <td class="auto-style3">
                     <asp:TextBox ID="TextBoxFechaProd" runat="server" TextMode="Date" style="margin-left: 0px" Width="166px"></asp:TextBox>
@@ -131,16 +136,16 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style9">Planta:</td>
+                <td class="auto-style24">Planta:</td>
                 <td class="auto-style3">
                     <asp:DropDownList ID="DropDownListPlantas" runat="server" AutoPostBack="True" DataSourceID="BopDBPlanta" DataTextField="Descripción" DataValueField="Planta">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style7">Area:&nbsp;
+                <td class="auto-style7"><span class="auto-style25">Area:</span>&nbsp;
                     <asp:DropDownList ID="DropDownAreas" runat="server" DataSourceID="BopDBAreas" DataTextField="Descripción" DataValueField="Area">
                     </asp:DropDownList>
                 </td>
-                <td class="auto-style8">Turno:&nbsp;
+                <td class="auto-style8"><span class="auto-style25">Turno:</span>&nbsp;
                     <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BopDBTurnosPlanta" DataTextField="Turno" DataValueField="Codigo" AutoPostBack="True">
                     </asp:DropDownList>
                 </td>
@@ -256,7 +261,7 @@
                                         <asp:Label ID="Label4" runat="server" Text='<%# Bind("TiempoPlanif", "{0:N}") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Prio." SortExpression="Prioridad">
+                                <asp:TemplateField HeaderText="Prioridad" SortExpression="Prioridad">
                                     <EditItemTemplate>
                                         <asp:DropDownList ID="DropDownList3" runat="server" SelectedValue='<%# Bind("Prioridad") %>'>
                                             <asp:ListItem>Media</asp:ListItem>
@@ -298,18 +303,18 @@
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>
-                            <HeaderStyle BackColor="#4D6082" ForeColor="#CCCCCC" />
+                            <HeaderStyle BackColor="#003366" ForeColor="White" />
                         </asp:GridView>
                     <asp:Panel ID="EmptyPanel" runat="server" Width="100%">
                         <table style="width: 100%;">
                             <tr>
                                 <td class="auto-style23">&nbsp;</td>
                                 <td class="auto-style16"><strong>OF</strong></td>
-                                <td class="auto-style22">Producto</td>
-                                <td class="auto-style21">Cantidad Plan</td>
+                                <td class="auto-style22"><span class="auto-style25">Producto</span></td>
+                                <td class="auto-style21">Cantidad Plan</span></td>
                                 <td class="auto-style20">&nbsp;</td>
-                                <td class="auto-style19">Prio.</td>
-                                <td class="auto-style18">Fechado</td>
+                                <td class="auto-style19"><span class="auto-style25">Prio.</span></td>
+                                <td class="auto-style18">Fechado</span></td>
                                 <td class="auto-style24">Obs</td>
                             </tr>
                             <tr>
