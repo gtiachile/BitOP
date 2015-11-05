@@ -202,6 +202,7 @@
     <Content Include="Admin\Autorizaciones.aspx" />
     <Content Include="Admin\Causas_Detencion.aspx" />
     <Content Include="Admin\Centros.aspx" />
+    <Content Include="Admin\CentrosCosto.aspx" />
     <Content Include="Admin\Configuracion_Planillas.aspx" />
     <Content Include="Admin\Equipos.aspx" />
     <Content Include="Admin\Familias_Producto.aspx" />
@@ -430,6 +431,13 @@
     </Compile>
     <Compile Include="Admin\Centros.aspx.designer.cs">
       <DependentUpon>Centros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CentrosCosto.aspx.cs">
+      <DependentUpon>CentrosCosto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CentrosCosto.aspx.designer.cs">
+      <DependentUpon>CentrosCosto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Configuracion_Planillas.aspx.cs">
       <DependentUpon>Configuracion_Planillas.aspx</DependentUpon>
