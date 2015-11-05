@@ -177,20 +177,14 @@
                                 <td>
                                     <asp:DropDownList ID="DropDownListPlanta" runat="server" AutoPostBack="True" DataSourceID="BopDBPlantas" DataTextField="Descripción" DataValueField="Planta">
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="BopDBPlantas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas] WHERE ([Centro] = @Centro) and Estado='Activo'">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="DropDownListCentro" Name="Centro" PropertyName="SelectedValue" />
-                                        </SelectParameters>
+                                    <asp:SqlDataSource ID="BopDBPlantas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas] WHERE  Estado='Activo'">
                                     </asp:SqlDataSource>
                                 </td>
                                 <td>Equipo:</td>
                                 <td>
                                     <asp:DropDownList ID="DropDownListEquipo" runat="server" DataSourceID="BopDBEquipos" DataTextField="Descripción" DataValueField="Equipo">
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="BopDBEquipos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Equipo], [Descripción] FROM [Equipos] WHERE ([Proceso] = @Proceso and Estado='Activo')">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="DropDownListProceso" Name="Proceso" PropertyName="SelectedValue" />
-                                        </SelectParameters>
+                                    <asp:SqlDataSource ID="BopDBEquipos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Equipo], [Descripción] FROM [Equipos] WHERE (Estado='Activo')">
                                     </asp:SqlDataSource>
                                 </td>
                                 <td>Días Permitidos<br />Actualización</td>
@@ -212,10 +206,7 @@
                                 <td>
                                     <asp:DropDownList ID="DropDownListArea" runat="server" AutoPostBack="True" DataSourceID="BopDBAreas" DataTextField="Descripción" DataValueField="Area">
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="BopDBAreas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Area], [Descripción] FROM [Areas] WHERE ([Planta] = @Planta) and Estado='Activo'">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="DropDownListPlanta" Name="Planta" PropertyName="SelectedValue" />
-                                        </SelectParameters>
+                                    <asp:SqlDataSource ID="BopDBAreas" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Area], [Descripción] FROM [Areas] WHERE  Estado='Activo'">
                                     </asp:SqlDataSource>
                                 </td>
                                 <td>Nivel Registro Detenciones</td>
@@ -241,10 +232,7 @@
                                 <td>
                                     <asp:DropDownList ID="DropDownListProceso" runat="server" AutoPostBack="True" DataSourceID="BopDBProcesos" DataTextField="Descripción" DataValueField="Proceso">
                                     </asp:DropDownList>
-                                    <asp:SqlDataSource ID="BopDBProcesos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Proceso], [Descripción] FROM [Procesos] WHERE (Area = @Area and Estado='Activo')">
-                                        <SelectParameters>
-                                            <asp:ControlParameter ControlID="DropDownListArea" Name="Area" PropertyName="SelectedValue" />
-                                        </SelectParameters>
+                                    <asp:SqlDataSource ID="BopDBProcesos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Proceso], [Descripción] FROM [Procesos] WHERE ( Estado='Activo')">
                                     </asp:SqlDataSource>
                                 </td>
                                 <td>Turno:</td>
@@ -301,7 +289,6 @@
                     <InsertParameters>
                         <asp:Parameter Name="Usuario" Type="String" />
                         <asp:Parameter Name="Funcion" Type="String" />
-                        <asp:Parameter Name="eMail" Type="String" />
                         <asp:Parameter Name="Area" Type="String" />
                         <asp:Parameter Name="Turno" Type="String" />
                         <asp:Parameter Name="Proceso" />
