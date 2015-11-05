@@ -149,7 +149,16 @@
                 <td style="border-style: solid; border-width: 1px; padding: 1px 4px" valign="top">
                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Causa" DataSourceID="BopDBCausasDetencion" Width="90%">
                         <Columns>
-                            <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
+                            <asp:TemplateField ShowHeader="False">
+                                <EditItemTemplate>
+                                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" ImageUrl="~/Images/saveHS.png" Text="Update" />
+                                    &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/Images/StopHS.png" Text="Cancel" />
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/EditTableHS.png" Text="Edit" />
+                                    &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Images/DeleteHS.png" Text="Delete" OnClientClick="return confirm('¿Está seguro que desea eliminar?'); " />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="Causa" HeaderText="Causa" ReadOnly="True" SortExpression="Causa" />
                             <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
                             <asp:TemplateField HeaderText="Tipo" SortExpression="Tipo">
