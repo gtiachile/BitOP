@@ -26,7 +26,7 @@ AS
 BEGIN
 	SET @Done = 1
 	SET @Msg = ''
-	IF (SELECT COUNT(*) FROM UsuariosFuncion WHERE Usuario=@Usuario) > 0
+	IF (SELECT COUNT(*) FROM UsuarioFuncion WHERE Usuario=@Usuario) > 0
 	BEGIN
 		SET @Done = 0
 		SET @Msg = 'Registro ya existe'

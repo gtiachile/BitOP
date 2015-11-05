@@ -10,7 +10,7 @@
                 <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/AddMark_10580_inverse.png" OnClick="ImageButton1_Click" />
                 &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Centro de Costo</asp:LinkButton>
                 <br />
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CCosto" DataSourceID="BopDBCentrosCosto" Width="60%">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CCosto" DataSourceID="BopDBCentrosCosto" Width="70%">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -32,7 +32,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Descripción" SortExpression="Descripción">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Descripción") %>' MaxLength="30"></asp:TextBox>
+                                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Descripción") %>' MaxLength="50"></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label3" runat="server" Text='<%# Bind("Descripción") %>'></asp:Label>
@@ -40,7 +40,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Responsable" SortExpression="Responsable">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Responsable") %>' MaxLength="30"></asp:TextBox>
+                                <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Responsable") %>' MaxLength="50"></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label4" runat="server" Text='<%# Bind("Responsable") %>'></asp:Label>
@@ -112,7 +112,7 @@
                             <tr>
                                 <td>Descripción:</td>
                                 <td>
-                                    <asp:TextBox ID="DescripciónTextBox" runat="server" Text='<%# Bind("Descripción") %>' ValidationGroup="Nuevo registro" />
+                                    <asp:TextBox ID="DescripciónTextBox" runat="server" Text='<%# Bind("Descripción") %>' ValidationGroup="Nuevo registro" MaxLength="50" />
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescripciónTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red" ValidationGroup="Nuevo registro">* Obligatorio</asp:RequiredFieldValidator>
@@ -121,7 +121,7 @@
                             <tr>
                                 <td>Responsable:</td>
                                 <td>
-                                    <asp:TextBox ID="ResponsableTextBox" runat="server" Text='<%# Bind("Responsable") %>' />
+                                    <asp:TextBox ID="ResponsableTextBox" runat="server" Text='<%# Bind("Responsable") %>' MaxLength="50" />
                                 </td>
                                 <td>&nbsp;</td>
                             </tr>
