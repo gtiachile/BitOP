@@ -291,10 +291,10 @@
                         <asp:Parameter Name="Funcion" Type="String" />
                         <asp:Parameter Name="Area" Type="String" />
                         <asp:Parameter Name="Turno" Type="String" />
-                        <asp:Parameter Name="Proceso" />
-                        <asp:Parameter Name="Equipo" />
+                        <asp:Parameter Name="Proceso" Type="String" />
+                        <asp:Parameter Name="Equipo" Type="String" />
                         <asp:Parameter Name="NivelRegDetencion" Type="String" />
-                        <asp:Parameter Name="DiasAtrasoRef" Type="Int32" />
+                        <asp:Parameter Name="DiasAtrasoReg" Type="Int32" />
                         <asp:Parameter Name="Done" Type="Boolean" />
                         <asp:Parameter Name="Msg" Type="String" />
                     </InsertParameters>
