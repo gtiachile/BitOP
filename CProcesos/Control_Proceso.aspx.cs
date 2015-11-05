@@ -84,5 +84,13 @@ namespace BitOp.CProcesos
 
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = GridView1.SelectedIndex;
+            Label lblPlanilla = (Label)GridView1.Rows[i].FindControl("lblNroPlanilla");
+            SelPlanilla.Text = lblPlanilla.Text;
+            GridView2.DataBind();
+        }
+
     }
 }
