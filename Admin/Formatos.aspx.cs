@@ -16,12 +16,22 @@ namespace BitOp.Admin
 
         protected void InsertButton_Click(object sender, EventArgs e)
         {
-            
+            MultiView1.ActiveViewIndex = 0;
         }
 
         protected void On_Inserted(object sender, SqlDataSourceStatusEventArgs e)
         {
             GridView1.DataBind();
+        }
+
+        protected void ImageButton1_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 1;
+        }
+
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 0;
         }
     }
 }
