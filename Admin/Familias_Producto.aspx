@@ -9,10 +9,13 @@
         .auto-style2 {
             width: 221px;
         }
+        .auto-style10 {
+            color: #000000;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>FAMILIAS DE PRODUCTO</h3>
+    <h3 class="auto-style10"><strong>FAMILIAS DE PRODUCTO</strong></h3>
     <p>
         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">

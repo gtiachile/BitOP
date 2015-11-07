@@ -7,8 +7,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-    TIPOS DE DETENCION</p>
+    <p class="auto-style10">
+        <strong>TIPOS DE DETENCION</strong></p>
     <p>
         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">

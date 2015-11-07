@@ -7,7 +7,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>CAUSAS DE DETENCION</h3>
+    <h3 class="auto-style10"><strong>CAUSAS DE DETENCION</strong></h3>
     <p>
         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">
@@ -55,6 +55,7 @@
                                             <ItemTemplate>
                                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("Planificada") %>'></asp:Label>
                                             </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Estándar" SortExpression="Estandar">
                                             <EditItemTemplate>
@@ -66,6 +67,7 @@
                                             <ItemTemplate>
                                                 <asp:Label ID="Label3" runat="server" Text='<%# Bind("Estandar") %>'></asp:Label>
                                             </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Mant." SortExpression="Mantencion">
                                             <EditItemTemplate>
@@ -77,6 +79,7 @@
                                             <ItemTemplate>
                                                 <asp:Label ID="Label4" runat="server" Text='<%# Bind("Mantencion") %>'></asp:Label>
                                             </ItemTemplate>
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                                             <EditItemTemplate>

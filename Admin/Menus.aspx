@@ -34,8 +34,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        MENUS</p>
+    <p class="auto-style11">
+        <strong>MENUS</strong></p>
     <p>
         Perfil:
         <asp:DropDownList ID="DropDownPerfil" runat="server" DataSourceID="BopDBPerfiles" DataTextField="Descripción" DataValueField="Perfil" AutoPostBack="True">

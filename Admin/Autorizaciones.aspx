@@ -25,10 +25,13 @@
             color: #000000;
             font-weight: bold;
         }
+        .auto-style13 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>AUTORIZACIONES</h3>
+    <h3 class="auto-style13"><strong>AUTORIZACIONES</strong></h3>
     <p>
         <asp:DropDownList ID="DropDownListPerfil" runat="server" DataSourceID="BopDBPerfiles" DataTextField="Descripción" DataValueField="Perfil" AutoPostBack="True">
         </asp:DropDownList>

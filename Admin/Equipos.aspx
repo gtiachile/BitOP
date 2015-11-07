@@ -14,7 +14,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>EQUIPOS</h3>
+    <h3 class="auto-style10"><strong>EQUIPOS</strong></h3>
     <p>
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="Equipo" DataSourceID="BopDBEquipos" DefaultMode="Insert">
             <EditItemTemplate>
