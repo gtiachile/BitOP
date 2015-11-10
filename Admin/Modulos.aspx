@@ -18,10 +18,10 @@
             <asp:View ID="View1" runat="server">
                 <p>
                     <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Images/AddMark_10580_inverse.png" OnClick="LinkButton1_Click" />
-                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Agregar Modulo</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Agregar Módulo</asp:LinkButton>
                 </p>
                 <p>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Modulo" DataSourceID="BopDBModulos" EnableModelValidation="False" Width="60%">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Modulo" DataSourceID="BopDBModulos" EnableModelValidation="False" Width="60%" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
@@ -118,8 +118,8 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" OnClick="InsertButton_Click" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
+                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         Modulo:

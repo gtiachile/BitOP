@@ -128,6 +128,7 @@
                                 <ItemTemplate>
                                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("PesoNeto", "{0:N3}") %>'></asp:Label>
                                 </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Kg. Caja" SortExpression="PesoNetoCaja">
                                 <EditItemTemplate>
@@ -136,6 +137,7 @@
                                 <ItemTemplate>
                                     <asp:Label ID="Label8" runat="server" Text='<%# Bind("PesoNetoCaja", "{0:N2}") %>'></asp:Label>
                                 </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="UM" SortExpression="Unidad">
                                 <EditItemTemplate>
@@ -146,6 +148,7 @@
                                 <ItemTemplate>
                                     <asp:Label ID="Label9" runat="server" Text='<%# Bind("Unidad") %>'></asp:Label>
                                 </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
                             <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="Formato" SortExpression="Formato">
                                 <EditItemTemplate>
@@ -156,6 +159,7 @@
                                 <ItemTemplate>
                                     <asp:Label ID="Label10" runat="server" Text='<%# Eval("Formato") %>'></asp:Label>
                                 </ItemTemplate>
+                                <ItemStyle HorizontalAlign="Center" />
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                                 <EditItemTemplate>
@@ -330,8 +334,8 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" OnClick="InsertButton_Click" />
-                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
+                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         Material:

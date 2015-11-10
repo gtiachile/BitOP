@@ -16,7 +16,7 @@
                     &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Secuencia</asp:LinkButton>
                 </p>
                 <p>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="tipo" DataSourceID="BopDBSecuencias" Width="50%">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="tipo" DataSourceID="BopDBSecuencias" Width="50%" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
@@ -28,15 +28,22 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="tipo" HeaderText="Tipo" ReadOnly="True" SortExpression="tipo" />
-                            <asp:BoundField DataField="inicial" HeaderText="Inicial" SortExpression="inicial" />
-                            <asp:BoundField DataField="actual" HeaderText="Actual" SortExpression="actual" />
-                            <asp:BoundField DataField="incremento" HeaderText="Incremento" SortExpression="incremento" />
+                            <asp:BoundField DataField="inicial" HeaderText="Inicial" SortExpression="inicial" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="actual" HeaderText="Actual" SortExpression="actual" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="incremento" HeaderText="Incremento" SortExpression="incremento" >
+                            <ItemStyle HorizontalAlign="Center" />
+                            </asp:BoundField>
                         </Columns>
                         <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                 </p>
             </asp:View>
             <asp:View ID="View2" runat="server">
+                <br />
                 <asp:FormView ID="FormView1" runat="server" DataKeyNames="tipo" DataSourceID="BopDBSecuencias" DefaultMode="Insert">
                     <EditItemTemplate>
                         tipo:
@@ -93,8 +100,9 @@
                                 </td>
                             </tr>
                         </table>
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancel" />
+                        <br />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancelar" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         tipo:

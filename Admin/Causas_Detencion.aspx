@@ -19,7 +19,7 @@
                     <table style="width:100%;">
                         <tr>
                             <td style="border-style: solid; border-width: 1px; padding: 1px 4px" valign="top">
-                                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Causa" DataSourceID="BopDBCausasDetencion" Width="90%">
+                                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Causa" DataSourceID="BopDBCausasDetencion" Width="90%" ShowHeaderWhenEmpty="True">
                                     <Columns>
                                         <asp:TemplateField ShowHeader="False">
                                             <EditItemTemplate>
@@ -224,8 +224,8 @@
                             </tr>
                         </table>
                         <br />
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancel" />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancelar" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         Causa:

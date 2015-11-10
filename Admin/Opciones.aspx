@@ -46,6 +46,7 @@
             <asp:View ID="View1" runat="server">
                 <p>
                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/AddMark_10580_inverse.png" OnClick="ImageButton1_Click" Width="16px" />
+                    &nbsp;
                     <asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Opción</asp:LinkButton>
                 </p>
                 <p>
@@ -55,7 +56,7 @@
                     <asp:SqlDataSource ID="BopDBModulos" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Modulo] FROM [Modulos]"></asp:SqlDataSource>
                 </p>
                 <p>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="80%">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Opcion" DataSourceID="BopDBOpciones" Width="80%" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
@@ -119,7 +120,10 @@
                         </Columns>
                         <HeaderStyle BackColor="#364E6F" BorderColor="#003366" ForeColor="White" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="BopDBOpciones" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Opciones] WHERE [Opcion] = @original_Opcion AND [Descripción] = @original_Descripción AND [Modulo] = @original_Modulo AND [Estado] = @original_Estado" InsertCommand="INSERT INTO [Opciones] ([Opcion], [Descripción], [Modulo], [Estado],[Tipo],[Url]) VALUES (@Opcion, @Descripción, @Modulo, @Estado, @Tipo, @Url)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Opcion, Descripción, Modulo, Estado, RTRIM(tipo) AS tipo, url,tx FROM Opciones WHERE (Modulo = @Modulo)" UpdateCommand="UPDATE [Opciones] SET [Descripción] = @Descripción, [Modulo] = @Modulo, [tx]=@tx,[Tipo] = @Tipo, [Url] = @Url,  [Estado] = @Estado WHERE [Opcion] = @original_Opcion AND [Descripción] = @original_Descripción AND [Modulo] = @original_Modulo AND [Estado] = @original_Estado ">
+                    <asp:SqlDataSource ID="BopDBOpciones" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Opciones] WHERE [Opcion] = @original_Opcion AND [Descripción] = @original_Descripción AND [Modulo] = @original_Modulo AND [Estado] = @original_Estado" InsertCommand="INSERT INTO [Opciones] ([Opcion],  [Descripción],  [Modulo],  [Estado],  [Tipo],  [Url]) 
+                            VALUES (@Opcion, @Descripción, @Modulo, @Estado, @Tipo, @Url)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Opcion, Descripción, Modulo, Estado, RTRIM(tipo) AS tipo, url,tx 
+FROM Opciones
+ WHERE (Modulo = @Modulo)" UpdateCommand="UPDATE [Opciones] SET [Descripción] = @Descripción, [Modulo] = @Modulo, [tx]=@tx,[Tipo] = @Tipo, [Url] = @Url,  [Estado] = @Estado WHERE [Opcion] = @original_Opcion AND [Descripción] = @original_Descripción AND [Modulo] = @original_Modulo AND [Estado] = @original_Estado ">
                         <DeleteParameters>
                             <asp:Parameter Name="original_Opcion" Type="String" />
                             <asp:Parameter Name="original_Descripción" Type="String" />
@@ -184,7 +188,7 @@
                 <tr>
                     <td class="auto-style10">Descripción:</td>
                     <td class="auto-style5" colspan="3">
-                        <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' Width="222px" Height="16px" />
+                        <asp:TextBox ID="DescripciónTextBox0" runat="server" Text='<%# Bind("Descripción") %>' Width="331px" Height="16px" />
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescripciónTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -217,7 +221,7 @@
                     <td class="auto-style10">Tipo: </td>
                     <td class="auto-style5">
                         <asp:DropDownList ID="DropDownList6" runat="server" SelectedValue='<%# Bind("tipo") %>'>
-                            <asp:ListItem>Página</asp:ListItem>
+                            <asp:ListItem>Pagina</asp:ListItem>
                             <asp:ListItem>Menú</asp:ListItem>
                         </asp:DropDownList>
                     </td>
@@ -232,8 +236,8 @@
                 </tr>
             </table>
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" OnClick="InsertButton_Click" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
+            &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
         </InsertItemTemplate>
         <ItemTemplate>
             Opcion:

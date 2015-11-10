@@ -212,7 +212,6 @@
     <Content Include="Admin\Plantas.aspx" />
     <Content Include="Admin\Procesos.aspx" />
     <Content Include="Admin\Productos.aspx" />
-    <Content Include="Admin\prueba.aspx" />
     <Content Include="Admin\Secuencias.aspx" />
     <Content Include="Admin\Tipos_Detencion.aspx" />
     <Content Include="Admin\Tipo_Incidente.aspx" />
@@ -491,13 +490,6 @@
     </Compile>
     <Compile Include="Admin\Productos.aspx.designer.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\prueba.aspx.cs">
-      <DependentUpon>prueba.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\prueba.aspx.designer.cs">
-      <DependentUpon>prueba.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Secuencias.aspx.cs">
       <DependentUpon>Secuencias.aspx</DependentUpon>

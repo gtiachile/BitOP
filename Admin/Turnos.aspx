@@ -18,11 +18,14 @@
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
             <InsertItemTemplate>
-                <span class="auto-style10">Ingrese Turno:</span>&nbsp;<asp:TextBox ID="TurnoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Turno") %>' Width="50px" />
+                <span class="auto-style10">
+                <br />
+                Ingrese Turno: </span>&nbsp;<asp:TextBox ID="TurnoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Turno") %>' Width="50px" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TurnoTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+                &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
             </InsertItemTemplate>
             <ItemTemplate>
                 Turno:
@@ -34,7 +37,7 @@
         </asp:FormView>
     </p>
     <p>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Turno" DataSourceID="BopDBTurnos" Width="20%">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Turno" DataSourceID="BopDBTurnos" Width="20%" ShowHeaderWhenEmpty="True">
             <Columns>
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>

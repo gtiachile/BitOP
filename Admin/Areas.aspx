@@ -15,7 +15,7 @@
                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton3_Click">Agregar Area</asp:LinkButton>
             </p>
             <p>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Area" DataSourceID="BopDBAreas" Width="60%">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Area" DataSourceID="BopDBAreas" Width="60%" ShowHeaderWhenEmpty="True">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -31,7 +31,7 @@
                         <asp:BoundField DataField="Descripción" HeaderText="Descripción" SortExpression="Descripción" />
                         <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
                             <EditItemTemplate>
-                                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="BopDBPlantasDet0" DataTextField="Descripción" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
+                                <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="BopDBPlantasDet" DataTextField="Descripción" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBPlantasDet" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                             </EditItemTemplate>
@@ -135,8 +135,9 @@ SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                             <td>&nbsp;</td>
                         </tr>
                     </table>
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertButton_Click" Text="Cancel" />
+                    <br />
+                    &nbsp;<asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                    &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertButton_Click" Text="Cancelar" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     Area:

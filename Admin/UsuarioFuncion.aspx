@@ -25,13 +25,14 @@
                 <table style="width: 100%;">
                     <tr>
                         <td valign="top">
-                            <br />
                             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/AddMark_10580_inverse.png" OnClick="ImageButton1_Click" />
                             &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Función de Usuario</asp:LinkButton>
+                            <br />
+                            <br />
                         </td>
                     </tr>
                 </table>
-                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuarioFuncionDet" Width="100%">
+                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Usuario" DataSourceID="BopDBUsuarioFuncionDet" Width="100%" ShowHeaderWhenEmpty="True">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -207,7 +208,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style11">Funcion:</td>
+                                <td class="auto-style11">Función:</td>
                                 <td class="auto-style12">
                                     <asp:TextBox ID="FuncionTextBox0" runat="server" MaxLength="50" Text='<%# Bind("Funcion") %>' Width="231px" />
                                 </td>
@@ -259,10 +260,12 @@
                             </tr>
                             <tr>
                                 <td class="auto-style11">
-                                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
+                                    <br />
+                                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
                                     &nbsp;</td>
                                 <td class="auto-style12">
-                                    <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancel" />
+                                    <br />
+                                    <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancelar" />
                                 </td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>

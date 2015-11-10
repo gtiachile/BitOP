@@ -16,7 +16,7 @@
                 &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Unidad de Medida</asp:LinkButton>
             </p>
             <p>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Unidad" DataSourceID="BopDBUnidades" Width="70%">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Unidad" DataSourceID="BopDBUnidades" Width="50%" ShowHeaderWhenEmpty="True">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -57,6 +57,7 @@
             </p>
         </asp:View>
         <asp:View ID="View2" runat="server">
+            <br />
             <asp:FormView ID="FormView1" runat="server" DataKeyNames="Unidad" DataSourceID="BopDBUnidades" DefaultMode="Insert">
                 <EditItemTemplate>
                     Unidad:
@@ -112,8 +113,9 @@
                             <td>&nbsp;</td>
                         </tr>
                     </table>
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancel" />
+                    <br />
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                    &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancelar" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     Unidad:

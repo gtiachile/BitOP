@@ -110,8 +110,8 @@ SELECT [Equipo], [Descripción] FROM [Equipos] where Estado='Activo'"></asp:SqlD
                                 <td class="auto-style11"></td>
                             </tr>
                         </table>
-                        <asp:LinkButton ID="InsertButton0" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" ValidationGroup="VG_Encabezado" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton0" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                        <asp:LinkButton ID="InsertButton0" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" ValidationGroup="VG_Encabezado" />
+                        &nbsp; <asp:LinkButton ID="InsertCancelButton0" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         NroPlanilla:
@@ -170,7 +170,7 @@ SELECT [Equipo], [Descripción] FROM [Equipos] where Estado='Activo'"></asp:SqlD
                         <asp:Parameter Name="NroPlanilla" Type="Int64" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" Caption="Planillas Disponibles" DataKeyNames="NroPlanilla" DataSourceID="BopDBPlanillasMedicionEnc" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="80%">
+                <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" Caption="Planillas Disponibles" DataKeyNames="NroPlanilla" DataSourceID="BopDBPlanillasMedicionEnc" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" Width="80%" ShowHeaderWhenEmpty="True">
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
@@ -458,8 +458,8 @@ SELECT [Equipo], [Descripción] FROM [Equipos]"></asp:SqlDataSource>
                                             <td>&nbsp;</td>
                                         </tr>
                                     </table>
-                                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+                                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" />
+                                    &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" />
                                 </InsertItemTemplate>
                                 <ItemTemplate>
                                     NroPlanilla:

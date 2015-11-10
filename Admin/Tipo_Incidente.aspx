@@ -4,6 +4,19 @@
         .auto-style10 {
             color: #000000;
         }
+        .auto-style11 {
+            width: 176px;
+        }
+        .auto-style12 {
+            color: #000000;
+            width: 93px;
+        }
+        .auto-style13 {
+            width: 149px;
+        }
+        .auto-style14 {
+            width: 362px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,7 +30,7 @@
                     &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Tipo de Incidente</asp:LinkButton>
                 </p>
                 <p>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="TipoInicidente" DataSourceID="BopDBTipoIncidente" Width="60%">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="TipoInicidente" DataSourceID="BopDBTipoIncidente" Width="60%" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
@@ -56,6 +69,7 @@
                 </p>
             </asp:View>
             <asp:View ID="View2" runat="server">
+                <br />
                 <asp:FormView ID="FormView1" runat="server" DataKeyNames="TipoInicidente" DataSourceID="BopDBTipoIncidente" DefaultMode="Insert" OnPageIndexChanging="FormView1_PageIndexChanging">
                     <EditItemTemplate>
                         TipoInicidente:
@@ -73,45 +87,46 @@
                     <InsertItemTemplate>
                         <table style="width:100%;">
                             <tr>
-                                <td class="auto-style10">Tipo Incidente:</td>
-                                <td>
+                                <td class="auto-style12">Tipo Incidente:</td>
+                                <td class="auto-style14">
                                     <asp:TextBox ID="TipoInicidenteTextBox" runat="server" MaxLength="10" Text='<%# Bind("TipoInicidente") %>' Width="50px" />
                                 </td>
-                                <td>
+                                <td class="auto-style13">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TipoInicidenteTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">Descripción:</td>
-                                <td>
-                                    <asp:TextBox ID="DescripcionTextBox0" runat="server" MaxLength="50" Text='<%# Bind("Descripcion") %>' />
+                                <td class="auto-style12">Descripción:</td>
+                                <td class="auto-style14">
+                                    <asp:TextBox ID="DescripcionTextBox0" runat="server" MaxLength="50" Text='<%# Bind("Descripcion") %>' Height="16px" Width="233px" />
                                 </td>
-                                <td>
+                                <td class="auto-style13">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescripcionTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">eMail alerta:</td>
-                                <td>
-                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("emailAlerta") %>'></asp:TextBox>
+                                <td class="auto-style12">eMail alerta:</td>
+                                <td class="auto-style14">
+                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("emailAlerta") %>' Width="233px"></asp:TextBox>
                                 </td>
-                                <td>
+                                <td class="auto-style13">
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox2" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">Estado:</td>
-                                <td>
+                                <td class="auto-style12">Estado:</td>
+                                <td class="auto-style14">
                                     <asp:DropDownList ID="DropDownList2" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                         <asp:ListItem>Activo</asp:ListItem>
                                         <asp:ListItem>Inactivo</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
-                                <td>&nbsp;</td>
+                                <td class="auto-style13">&nbsp;</td>
                             </tr>
                         </table>
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" OnClick="InsertButton_Click" />
-                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
+                        <br />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insertar" OnClick="InsertButton_Click" />
+                        &nbsp; &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         TipoInicidente:

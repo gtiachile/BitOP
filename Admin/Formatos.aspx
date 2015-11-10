@@ -45,6 +45,7 @@
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="BopDBFamiliasGVI0" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [FamiliaProducto] FROM [FamiliaProductos]"></asp:SqlDataSource>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Rendimiento" SortExpression="Rendimiento">
                         <EditItemTemplate>
@@ -53,6 +54,7 @@
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("Rendimiento") %>'></asp:Label>
                         </ItemTemplate>
+                        <ItemStyle HorizontalAlign="Center" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                         <EditItemTemplate>
@@ -149,8 +151,9 @@
                             <td>&nbsp;</td>
                         </tr>
                     </table>
-                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                    &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" OnClick="InsertCancelButton_Click" />
+                    <br />
+                    <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                    &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar" OnClick="InsertCancelButton_Click" />
                 </InsertItemTemplate>
                 <ItemTemplate>
                     Formato:

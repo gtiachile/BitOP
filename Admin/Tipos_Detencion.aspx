@@ -4,6 +4,16 @@
         .auto-style10 {
             color: #000000;
         }
+        .auto-style12 {
+            width: 269px;
+        }
+        .auto-style13 {
+            width: 97px;
+        }
+        .auto-style16 {
+            color: #000000;
+            width: 35px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,7 +27,7 @@
                     &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="ImageButton1_Click">Agregar Tipo de Detención</asp:LinkButton>
                 </p>
                 <p>
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion" Width="60%">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion" Width="50%" ShowHeaderWhenEmpty="True">
                         <Columns>
                             <asp:TemplateField ShowHeader="False">
                                 <EditItemTemplate>
@@ -68,7 +78,8 @@
                 </p>
             </asp:View>
             <asp:View ID="View2" runat="server">
-                <asp:FormView ID="FormView1" runat="server" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion" DefaultMode="Insert">
+                <br />
+                <asp:FormView ID="FormView1" runat="server" DataKeyNames="Tipo" DataSourceID="BopDBTipoDetencion" DefaultMode="Insert" Width="469px">
                     <EditItemTemplate>
                         Tipo:
                         <asp:Label ID="TipoLabel1" runat="server" Text='<%# Eval("Tipo") %>' />
@@ -83,10 +94,10 @@
                         &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                     </EditItemTemplate>
                     <InsertItemTemplate>
-                        <table style="width:100%;">
+                        <table style="width:108%;">
                             <tr>
-                                <td class="auto-style10">Tipo:</td>
-                                <td>
+                                <td class="auto-style16">Tipo:</td>
+                                <td class="auto-style12">
                                     <asp:TextBox ID="TipoTextBox" runat="server" MaxLength="2" Text='<%# Bind("Tipo") %>' Width="16px" />
                                 </td>
                                 <td>
@@ -94,17 +105,17 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">Descripción:</td>
-                                <td>
-                                    <asp:TextBox ID="DescripciónTextBox0" runat="server" MaxLength="30" Text='<%# Bind("Descripción") %>' />
+                                <td class="auto-style16">Descripción:</td>
+                                <td class="auto-style12">
+                                    <asp:TextBox ID="DescripciónTextBox0" runat="server" MaxLength="30" Text='<%# Bind("Descripción") %>' Height="17px" Width="241px" />
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DescripciónTextBox0" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style10">Estado:</td>
-                                <td>
+                                <td class="auto-style16">Estado:</td>
+                                <td class="auto-style12">
                                     <asp:DropDownList ID="DropDownListEstado" runat="server" SelectedValue='<%# Bind("Estado") %>'>
                                         <asp:ListItem>Activo</asp:ListItem>
                                         <asp:ListItem>Inactivo</asp:ListItem>
@@ -113,8 +124,9 @@
                                 <td>&nbsp;</td>
                             </tr>
                         </table>
-                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insert" />
-                        &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancel" />
+                        <br />
+                        <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" OnClick="InsertButton_Click" Text="Insertar" />
+                        &nbsp;&nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" OnClick="InsertCancelButton_Click" Text="Cancelar" />
                     </InsertItemTemplate>
                     <ItemTemplate>
                         Tipo:

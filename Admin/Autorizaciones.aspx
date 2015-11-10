@@ -5,14 +5,14 @@
             text-align: left;
         }
         .auto-style3 {
-            width: 115px;
+            width: 93px;
         }
         .auto-style4 {
             width: 115px;
             text-align: center;
         }
         .auto-style10 {
-            width: 61px;
+            width: 42px;
         }
         .auto-style11 {
             text-align: left;
@@ -21,12 +21,17 @@
             font-weight: bold;
         }
         .auto-style12 {
-            width: 61px;
+            width: 42px;
             color: #000000;
             font-weight: bold;
         }
         .auto-style13 {
             color: #000000;
+        }
+        .auto-style14 {
+            width: 93px;
+            text-align: center;
+            font-size: xx-small;
         }
     </style>
 </asp:Content>
@@ -78,7 +83,7 @@ order by modulo, opcion">
                         <HeaderStyle BackColor="#003366" ForeColor="White" />
                     </asp:GridView>
                 </td>
-                <td class="auto-style4" valign="middle">
+                <td class="auto-style14" valign="middle">
                     <asp:Button ID="ButtonAgregaAut" runat="server" OnClick="ButtonAgregaAut_Click" style="text-align: left" Text="&gt;&gt;" />
                     <br />
                     <br />
