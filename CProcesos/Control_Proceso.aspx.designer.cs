@@ -175,21 +175,12 @@ namespace BitOp.CProcesos {
         protected global::System.Web.UI.WebControls.SqlDataSource BopDBPlanillasMedicionEnc;
         
         /// <summary>
-        /// Control GridView2.
+        /// Control ButtonIMediciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
-        
-        /// <summary>
-        /// Control BopDBMediciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource BopDBMediciones;
+        protected global::System.Web.UI.WebControls.Button ButtonIMediciones;
     }
 }

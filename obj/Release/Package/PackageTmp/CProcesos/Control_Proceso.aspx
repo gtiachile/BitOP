@@ -125,9 +125,13 @@
             <asp:ControlParameter ControlID="SelProceso" Name="Area" PropertyName="Text" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBMediciones" Width="100%">
+    <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="BopDBMediciones" Width="100%" OnRowUpdating="GridView2_RowUpdating">
         <Columns>
             <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:ImageButton ID="ImageButton2" runat="server" CommandName="Update" ImageUrl="~/Images/saveHS.png" />
+                    <asp:ImageButton ID="ImageButton3" runat="server" CommandName="Cancel" ImageUrl="~/Images/Cancel(build)_194_32.bmp" />
+                </EditItemTemplate>
                 <ItemTemplate>
                     <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/EditTableHS.png" Text="Editar" />
                 </ItemTemplate>
@@ -140,9 +144,9 @@
                     <asp:Label ID="SelNroPlanilla" runat="server" Text='<%# Eval("Linea") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CodVariable" SortExpression="CodVariable" Visible="False">
+            <asp:TemplateField HeaderText="CodVariable" SortExpression="CodVariable">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("CodVariable") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBoxVariable" runat="server" Text='<%# Bind("CodVariable") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("CodVariable") %>'></asp:Label>
@@ -158,7 +162,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Valor" SortExpression="Valor">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Valor") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBoxValor" runat="server" Text='<%# Bind("Valor") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Valor") %>'></asp:Label>
@@ -166,7 +170,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="LimSup" SortExpression="LimSup">
                 <EditItemTemplate>
-                    <asp:Label ID="Label13" runat="server" Text='<%# Eval("LimSup") %>'></asp:Label>
+                    <asp:Label ID="LabelLimSup" runat="server" Text='<%# Eval("LimSup") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("LimSup") %>'></asp:Label>
@@ -174,7 +178,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="LimInf" SortExpression="LimInf">
                 <EditItemTemplate>
-                    <asp:Label ID="Label14" runat="server" Text='<%# Eval("LimInf") %>'></asp:Label>
+                    <asp:Label ID="LabelLimInf" runat="server" Text='<%# Eval("LimInf") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("LimInf") %>'></asp:Label>
@@ -182,7 +186,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Unidad" SortExpression="Unidad">
                 <EditItemTemplate>
-                    <asp:Label ID="Label15" runat="server" Text='<%# Eval("Unidad") %>'></asp:Label>
+                    <asp:Label ID="LabelUnidad" runat="server" Text='<%# Eval("Unidad") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("Unidad") %>'></asp:Label>
@@ -191,7 +195,7 @@
             <asp:CheckBoxField DataField="Producto" HeaderText="Producto" SortExpression="Producto" Visible="False" />
             <asp:TemplateField HeaderText="Fecha" SortExpression="Fecha">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Fecha") %>' Width="120px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxFecha" runat="server" Text='<%# Bind("Fecha") %>' Width="120px" TextMode="Date"></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("Fecha") %>'></asp:Label>
@@ -199,7 +203,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Hora" SortExpression="Hora">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Hora") %>' TextMode="Time" Width="90px"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxHora" runat="server" Text='<%# Bind("Hora") %>' TextMode="Time" Width="90px"></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label8" runat="server" Text='<%# Bind("Hora") %>'></asp:Label>
@@ -207,7 +211,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="LoteSAP" SortExpression="LoteSAP">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox10" runat="server" Text='<%# Bind("LoteSAP") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBoxLoteSAP" runat="server" Text='<%# Bind("LoteSAP") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label9" runat="server" Text='<%# Bind("LoteSAP") %>'></asp:Label>
@@ -215,7 +219,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Material" SortExpression="Material">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="BopDBProducto" DataTextField="Material" DataValueField="Material" SelectedValue='<%# Eval("Material") %>'>
+                    <asp:DropDownList ID="DropDownListMaterial" runat="server" DataSourceID="BopDBProducto" DataTextField="Material" DataValueField="Material" SelectedValue='<%# Eval("Material") %>'>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="BopDBProducto" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT '' [Material], 'Producto' [Producto]
 union
@@ -229,18 +233,50 @@ SELECT [Material], [Producto] FROM [Productos] WHERE ([Planta] = @Planta)">
                     <asp:Label ID="Label10" runat="server" Text='<%# Bind("Material") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="Observacion" HeaderText="Observacion" SortExpression="Observacion" />
+            <asp:TemplateField HeaderText="Observacion" SortExpression="Observacion">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxObs" runat="server" Text='<%# Bind("Observacion") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label15" runat="server" Text='<%# Bind("Observacion") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Planta" SortExpression="Planta" Visible="False">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxPlanta" runat="server" Text='<%# Bind("Planta") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label11" runat="server" Text='<%# Bind("Planta") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Area" SortExpression="Area" Visible="False">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxArea" runat="server" Text='<%# Bind("Area") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label12" runat="server" Text='<%# Bind("Area") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Proceso" SortExpression="Proceso" Visible="False">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxProceso" runat="server" Text='<%# Bind("Proceso") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label13" runat="server" Text='<%# Bind("Proceso") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Equipo" SortExpression="Equipo" Visible="False">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBoxEquipo" runat="server" Text='<%# Bind("Equipo") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label14" runat="server" Text='<%# Bind("Equipo") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
         <HeaderStyle BackColor="#003366" ForeColor="White" />
     </asp:GridView>
-    <asp:SqlDataSource ID="BopDBMediciones" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT        PlanillasMedicionDet.NroPlanilla, PlanillasMedicionDet.Linea, PlanillasMedicionDet.Variable AS CodVariable, Variables.Descripcion AS Variable, Mediciones.Valor, Mediciones.LimSup,  Mediciones.LimInf, 
-                         Unidades.Descripcion AS Unidad, PlanillasMedicionDet.Producto,convert(varchar(20),getdate(),105) Fecha, cast(datepart(hh,getdate()) as varchar(5))+':'+cast(datepart(mi,getdate()) as varchar(5)) as Hora , isNull(Mediciones.LoteSAP,'') LoteSAP, isNull(Mediciones.Material,'') Material, isNull(Mediciones.Observacion,'') Observacion
-FROM            PlanillasMedicionDet INNER JOIN
-                         PlanillasMedicionEnc ON PlanillasMedicionDet.NroPlanilla = PlanillasMedicionEnc.NroPlanilla INNER JOIN
-                         Variables ON PlanillasMedicionDet.Variable = Variables.Variable INNER JOIN
-                         Unidades ON Variables.Unidad = Unidades.Unidad LEFT OUTER JOIN
-                         Mediciones ON PlanillasMedicionDet.Variable = Mediciones.Variable
-WHERE PlanillasMedicionDet.NroPlanilla=@Planilla">
+    <asp:SqlDataSource ID="BopDBMediciones" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT PlanillasMedicionDet.NroPlanilla, PlanillasMedicionDet.Linea, PlanillasMedicionDet.Variable AS CodVariable, Variables.Descripcion AS Variable, Mediciones.Valor, Mediciones.LimSup, Mediciones.LimInf, Unidades.Descripcion AS Unidad, PlanillasMedicionDet.Producto, CONVERT (varchar(20), GETDATE(), 105) AS Fecha, CAST(DATEPART(hh, GETDATE()) AS varchar(5)) + ':' + CAST(DATEPART(mi, GETDATE()) AS varchar(5)) AS Hora, ISNULL(Mediciones.LoteSAP, '') AS LoteSAP, ISNULL(Mediciones.Material, '') AS Material, ISNULL(Mediciones.Observacion, '') AS Observacion, Mediciones.Planta, Mediciones.Area, Mediciones.Proceso, Mediciones.Equipo FROM PlanillasMedicionDet INNER JOIN PlanillasMedicionEnc ON PlanillasMedicionDet.NroPlanilla = PlanillasMedicionEnc.NroPlanilla INNER JOIN Variables ON PlanillasMedicionDet.Variable = Variables.Variable INNER JOIN Unidades ON Variables.Unidad = Unidades.Unidad LEFT OUTER JOIN Mediciones ON PlanillasMedicionDet.Variable = Mediciones.Variable WHERE (PlanillasMedicionDet.NroPlanilla = @Planilla)">
         <SelectParameters>
             <asp:ControlParameter ControlID="SelPlanilla" DefaultValue="0" Name="Planilla" PropertyName="Text" />
         </SelectParameters>

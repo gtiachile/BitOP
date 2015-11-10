@@ -70,7 +70,7 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Password" SortExpression="Pass">
                                             <EditItemTemplate>
-                                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Pass") %>' TextMode="Password" Width="80px"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Pass") %>' Width="80px"></asp:TextBox>
                                             </EditItemTemplate>
                                             <ItemTemplate>
                                                 <asp:Label ID="Label1" runat="server" Text='<%# Bind("Pass") %>' Visible="False"></asp:Label>
@@ -123,14 +123,9 @@
                                     </Columns>
                                     <HeaderStyle BackColor="#003366" ForeColor="White" />
                                 </asp:GridView>
-                                <asp:SqlDataSource ID="BopDBUsuariosGV" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Usuarios] WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND (([Fecha Creación] = @original_Fecha_Creación) OR ([Fecha Creación] IS NULL AND @original_Fecha_Creación IS NULL)) AND [Estado] = @original_Estado" InsertCommand="INSERT INTO [Usuarios] ([Usuario], [Nombre], [eMail], [Pass], [Fecha Creación], [Estado]) VALUES (@Usuario, @Nombre, @eMail, @Pass, @Fecha_Creación, @Estado)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Usuarios]" UpdateCommand="UPDATE [Usuarios] SET [Nombre] = @Nombre, [eMail] = @eMail, [Pass] = @Pass, [Fecha Creación] = @Fecha_Creación, [Estado] = @Estado WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND (([Fecha Creación] = @original_Fecha_Creación) OR ([Fecha Creación] IS NULL AND @original_Fecha_Creación IS NULL)) AND [Estado] = @original_Estado">
+                                <asp:SqlDataSource ID="BopDBUsuariosGV" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Usuarios] WHERE [Usuario] = @original_Usuario" InsertCommand="INSERT INTO [Usuarios] ([Usuario], [Nombre], [eMail], [Pass], [Fecha Creación], [Estado]) VALUES (@Usuario, @Nombre, @eMail, @Pass, @Fecha_Creación, @Estado)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Usuarios]" UpdateCommand="UPDATE [Usuarios] SET [Nombre] = @Nombre, [eMail] = @eMail, [Pass] = @Pass, [Estado] = @Estado, [UsuarioAD] = @UsuarioAD, [DominioAD]=@DominioAD,[Perfil]=@Perfil, [Expiracion]=@Expiracion WHERE [Usuario] = @original_Usuario ">
                                     <DeleteParameters>
                                         <asp:Parameter Name="original_Usuario" Type="String" />
-                                        <asp:Parameter Name="original_Nombre" Type="String" />
-                                        <asp:Parameter Name="original_eMail" Type="String" />
-                                        <asp:Parameter Name="original_Pass" Type="String" />
-                                        <asp:Parameter Name="original_Fecha_Creación" Type="String" />
-                                        <asp:Parameter Name="original_Estado" Type="String" />
                                     </DeleteParameters>
                                     <InsertParameters>
                                         <asp:Parameter Name="Usuario" Type="String" />
@@ -144,14 +139,12 @@
                                         <asp:Parameter Name="Nombre" Type="String" />
                                         <asp:Parameter Name="eMail" Type="String" />
                                         <asp:Parameter Name="Pass" Type="String" />
-                                        <asp:Parameter Name="Fecha_Creación" Type="String" />
                                         <asp:Parameter Name="Estado" Type="String" />
+                                        <asp:Parameter Name="UsuarioAD" />
+                                        <asp:Parameter Name="DominioAD" />
+                                        <asp:Parameter Name="Perfil" />
+                                        <asp:Parameter Name="Expiracion" />
                                         <asp:Parameter Name="original_Usuario" Type="String" />
-                                        <asp:Parameter Name="original_Nombre" Type="String" />
-                                        <asp:Parameter Name="original_eMail" Type="String" />
-                                        <asp:Parameter Name="original_Pass" Type="String" />
-                                        <asp:Parameter Name="original_Fecha_Creación" Type="String" />
-                                        <asp:Parameter Name="original_Estado" Type="String" />
                                     </UpdateParameters>
                                 </asp:SqlDataSource>
                             </td>
@@ -281,7 +274,7 @@
                                     &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
                                 </ItemTemplate>
                             </asp:FormView>
-                            <asp:SqlDataSource ID="BopDBUsuariosFV" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Usuarios] WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND [Fecha Creación] = @original_Fecha_Creación AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaUsuario" InsertCommandType="StoredProcedure" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Usuarios]" UpdateCommand="UPDATE [Usuarios] SET [Nombre] = @Nombre, [eMail] = @eMail, [Pass] = @Pass, [Fecha Creación] = @Fecha_Creación, [Estado] = @Estado WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND [Fecha Creación] = @original_Fecha_Creación AND [Estado] = @original_Estado">
+                            <asp:SqlDataSource ID="BopDBUsuariosFV" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Usuarios] WHERE [Usuario] = @original_Usuario AND [Nombre] = @original_Nombre AND [eMail] = @original_eMail AND [Pass] = @original_Pass AND [Fecha Creación] = @original_Fecha_Creación AND [Estado] = @original_Estado" InsertCommand="p_ValidaInsertaUsuario" InsertCommandType="StoredProcedure" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Usuarios]" UpdateCommand="UPDATE [Usuarios] SET [Nombre] = @Nombre, [eMail] = @eMail, [Pass] = @Pass, [Estado] = @Estado WHERE [Usuario] = @original_Usuario">
                                 <DeleteParameters>
                                     <asp:Parameter Name="original_Usuario" Type="String" />
                                     <asp:Parameter Name="original_Nombre" Type="String" />
@@ -308,14 +301,8 @@
                                     <asp:Parameter Name="Nombre" Type="String" />
                                     <asp:Parameter Name="eMail" Type="String" />
                                     <asp:Parameter Name="Pass" Type="String" />
-                                    <asp:Parameter DbType="Date" Name="Fecha_Creación" />
                                     <asp:Parameter Name="Estado" Type="String" />
                                     <asp:Parameter Name="original_Usuario" Type="String" />
-                                    <asp:Parameter Name="original_Nombre" Type="String" />
-                                    <asp:Parameter Name="original_eMail" Type="String" />
-                                    <asp:Parameter Name="original_Pass" Type="String" />
-                                    <asp:Parameter DbType="Date" Name="original_Fecha_Creación" />
-                                    <asp:Parameter Name="original_Estado" Type="String" />
                                 </UpdateParameters>
                             </asp:SqlDataSource>
             </asp:View>

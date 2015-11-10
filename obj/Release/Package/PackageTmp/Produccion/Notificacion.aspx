@@ -635,12 +635,12 @@
                     <Columns>
                         <asp:TemplateField ShowHeader="False">
                             <EditItemTemplate>
-                                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" ImageUrl="~/Images/saveHS.png" Text="Update" />
-                                &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/Images/Cancel(build)_194_32.bmp" Text="Cancel" />
+                                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" ImageUrl="~/Images/saveHS.png"  />
+                                &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" ImageUrl="~/Images/Cancel(build)_194_32.bmp"  />
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/EditTableHS.png" Text="Edit" />
-                                &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Images/DeleteHS.png" Text="Delete" />
+                                <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/EditTableHS.png" />
+                                &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Images/DeleteHS.png"  />
                                     <cc1:ConfirmButtonExtender ID="cbe" runat="server" ConfirmText="" Enabled="True" TargetControlID="ImageButton2" DisplayModalPopupID="mpe">
                                     </cc1:ConfirmButtonExtender>
                                     <cc1:ModalPopupExtender ID="mpe" runat="server"  Enabled="True" TargetControlID="ImageButton2" PopupControlID="pnlPopup" OkControlID="btnYes" CancelControlID="btnNo">
