@@ -18,8 +18,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        PROCESOS</p>
+    <p class="auto-style10">
+        <strong>PROCESOS</strong></p>
 <p>
         <table style="width:100%;">
             <tr>

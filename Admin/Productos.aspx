@@ -76,7 +76,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Planta" SortExpression="Planta">
                                 <EditItemTemplate>
-                                    <asp:DropDownList ID="DropDownPlantaGV" runat="server" DataSourceID="BopDBPlantasGV0" DataTextField="Planta" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
+                                    <asp:DropDownList ID="DropDownPlantaGV" runat="server" DataSourceID="BopDBPlantasGV" DataTextField="Planta" DataValueField="Planta" SelectedValue='<%# Bind("Planta") %>'>
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="BopDBPlantasGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                                 </EditItemTemplate>
@@ -88,7 +88,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Proceso" SortExpression="Proceso">
                                 <EditItemTemplate>
-                                    <asp:DropDownList ID="DropDownListProcesoGV" runat="server" DataSourceID="BopDBProcesosGV0" DataTextField="Descripción" DataValueField="Proceso" SelectedValue='<%# Bind("Proceso") %>'>
+                                    <asp:DropDownList ID="DropDownListProcesoGV" runat="server" DataSourceID="BopDBProcesosGV" DataTextField="Descripción" DataValueField="Proceso" SelectedValue='<%# Bind("Proceso") %>'>
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="BopDBProcesosGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Proceso], [Descripción] FROM [Procesos]"></asp:SqlDataSource>
                                 </EditItemTemplate>
@@ -100,7 +100,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Familia" SortExpression="CodigoFamilia">
                                 <EditItemTemplate>
-                                    <asp:DropDownList ID="DropDownListFamiliaGV" runat="server" DataSourceID="BopDBFamiliasGV0" DataTextField="FamiliaProducto" DataValueField="Codigo" SelectedValue='<%# Bind("CodigoFamilia") %>'>
+                                    <asp:DropDownList ID="DropDownListFamiliaGV" runat="server" DataSourceID="BopDBFamiliasGV" DataTextField="FamiliaProducto" DataValueField="Codigo" SelectedValue='<%# Bind("CodigoFamilia") %>'>
                                     </asp:DropDownList>
                                     <asp:SqlDataSource ID="BopDBFamiliasGV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [FamiliaProducto] FROM [FamiliaProductos]"></asp:SqlDataSource>
                                 </EditItemTemplate>
@@ -372,7 +372,7 @@
                         &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
                     </ItemTemplate>
                 </asp:FormView>
-                <asp:SqlDataSource ID="BopDBProductosFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Productos] WHERE [Material] = @Material" InsertCommand="p_ValidaInsertaPRODUCTOS" InsertCommandType="StoredProcedure" OnInserted="On_Inserted" SelectCommand="SELECT * FROM [Productos]" UpdateCommand="UPDATE [Productos] SET [Producto] = @Producto, [CodigoMarca] = @CodigoMarca, [Planta] = @Planta, [Proceso] = @Proceso, [CodigoFamilia] = @CodigoFamilia, [IndSemielaborado] = @IndSemielaborado, [PesoNeto] = @PesoNeto, [PesoNetoCaja] = @PesoNetoCaja, [Estado] = @Estado, [Unidad] = @Unidad WHERE [Material] = @Material">
+                <asp:SqlDataSource ID="BopDBProductosFV" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" DeleteCommand="DELETE FROM [Productos] WHERE [Material] = @Material" InsertCommand="p_ValidaInsertaPRODUCTOS" InsertCommandType="StoredProcedure" OnInserted="On_Inserted" SelectCommand="SELECT * FROM [Productos]" UpdateCommand="UPDATE [Productos] SET [Producto] = @Producto, [CodigoMarca] = @CodigoMarca, [Planta] = @Planta, [Proceso] = @Proceso, [CodigoFamilia] = @CodigoFamilia, [IndSemielaborado] = @IndSemielaborado, [PesoNeto] = @PesoNeto, [PesoNetoCaja] = @PesoNetoCaja, [Estado] = @Estado, [Unidad] = @Unidad, [Formato] = @Formato WHERE [Material] = @Material">
                     <DeleteParameters>
                         <asp:Parameter Name="Material" Type="String" />
                     </DeleteParameters>
@@ -403,6 +403,7 @@
                         <asp:Parameter Name="PesoNetoCaja" Type="Decimal" />
                         <asp:Parameter Name="Estado" Type="String" />
                         <asp:Parameter Name="Unidad" Type="String" />
+                        <asp:Parameter Name="Formato" />
                         <asp:Parameter Name="Material" Type="String" />
                     </UpdateParameters>
                 </asp:SqlDataSource>

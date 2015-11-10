@@ -4,11 +4,14 @@
         .auto-style11 {
             height: 26px;
         }
+        .auto-style12 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        CONFIGURACION PLANILLAS CONDICION DE PROCESO</p>
+    <p class="auto-style12">
+        <strong>CONFIGURACION PLANILLAS CONDICION DE PROCESO</strong></p>
     <p>
         <asp:Label ID="lblNroPlanillaSel" runat="server" Visible="False"></asp:Label>
     </p>

@@ -11,11 +11,14 @@
             width: 63px;
             color: #000000;
         }
+        .auto-style14 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        ASIGNACION FUNCIONES USUARIO OPERACIONES</p>
+    <p class="auto-style14">
+        <strong>ASIGNACION FUNCIONES DE USUARIOS</strong></p>
     <p>
         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">
@@ -60,6 +63,7 @@
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBAreaGVI" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Area], [Descripción] FROM [Areas]"></asp:SqlDataSource>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Proceso" SortExpression="Proceso">
                             <EditItemTemplate>
@@ -72,6 +76,7 @@
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBProcesoGVI" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Proceso], [Descripción] FROM [Procesos]"></asp:SqlDataSource>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Equipo" SortExpression="Equipo">
                             <EditItemTemplate>
@@ -84,6 +89,7 @@
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBEquipoGVI" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Equipo], [Descripción] FROM [Equipos]"></asp:SqlDataSource>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Niv.Reg.Det." SortExpression="NivelRegDetencion">
                             <EditItemTemplate>
@@ -97,6 +103,7 @@
                             <ItemTemplate>
                                 <asp:Label ID="Label6" runat="server" Text='<%# Bind("NivelRegDetencion") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Días Atraso Reg." SortExpression="DiasAtrasoReg">
                             <EditItemTemplate>
@@ -110,6 +117,7 @@
                             <ItemTemplate>
                                 <asp:Label ID="Label2" runat="server" Text='<%# Bind("DiasAtrasoReg") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Turno" SortExpression="Turno">
                             <EditItemTemplate>
@@ -122,6 +130,7 @@
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBTurnosPlantaGVI" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Codigo], [Descripción] FROM [TurnoPlanta]"></asp:SqlDataSource>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                     </Columns>
                     <HeaderStyle BackColor="#003366" ForeColor="White" />

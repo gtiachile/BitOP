@@ -7,7 +7,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>AREAS</h3>
+    <h3 class="auto-style10"><strong>AREAS</strong></h3>
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="View1" runat="server">
             <p>
@@ -40,6 +40,7 @@
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBPlantasDet0" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="C.Costo" SortExpression="CCosto">
                             <EditItemTemplate>
@@ -48,6 +49,7 @@
                             <ItemTemplate>
                                 <asp:Label ID="Label3" runat="server" Text='<%# Eval("CCosto") %>'></asp:Label>
                             </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Estado" SortExpression="Estado">
                             <EditItemTemplate>

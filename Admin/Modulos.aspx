@@ -6,10 +6,13 @@
             width: 86px;
             color: #000000;
         }
+        .auto-style11 {
+            color: #000000;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>MODULOS</h3>
+    <h3 class="auto-style11"><strong>MODULOS</strong></h3>
     <p>
         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
             <asp:View ID="View1" runat="server">

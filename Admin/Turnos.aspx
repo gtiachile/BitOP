@@ -1,8 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Turnos.aspx.cs" Inherits="BitOp.Admin.Turnos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style10 {
+            color: #000000;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>TURNOS</h3>
+    <h3 class="auto-style10"><strong>TURNOS</strong></h3>
     <p>
         <asp:FormView ID="FormView1" runat="server" DataKeyNames="Turno" DataSourceID="BopDBTurnos" DefaultMode="Insert">
             <EditItemTemplate>
@@ -13,7 +18,7 @@
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
             <InsertItemTemplate>
-                &nbsp;<asp:TextBox ID="TurnoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Turno") %>' Width="50px" />
+                <span class="auto-style10">Ingrese Turno:</span>&nbsp;<asp:TextBox ID="TurnoTextBox" runat="server" MaxLength="10" Text='<%# Bind("Turno") %>' Width="50px" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TurnoTextBox" ErrorMessage="*Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
                 <br />
                 <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
@@ -31,7 +36,11 @@
     <p>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Turno" DataSourceID="BopDBTurnos" Width="20%">
             <Columns>
-                <asp:CommandField ButtonType="Image" DeleteImageUrl="~/Images/DeleteHS.png" ShowDeleteButton="True" CausesValidation="False" />
+                <asp:TemplateField ShowHeader="False">
+                    <ItemTemplate>
+                        <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Delete" ImageUrl="~/Images/DeleteHS.png" OnClientClick="return confirm('¿Está seguro que desea eliminar?'); " Text="Eliminar" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Turno" HeaderText="Turno" ReadOnly="True" SortExpression="Turno" />
             </Columns>
             <HeaderStyle BackColor="#003366" ForeColor="White" />

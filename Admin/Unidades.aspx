@@ -7,7 +7,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h3>UNIDADES DE MEDIDA</h3>
+    <h3 class="auto-style10"><strong>UNIDADES DE MEDIDA</strong></h3>
     <br />
     <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
         <asp:View ID="View1" runat="server">
