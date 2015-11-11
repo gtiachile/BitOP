@@ -56,7 +56,8 @@ namespace BitOp.CProcesos
                 lblArea.Text = row["AreaDsc"].ToString();
                 lblPlanta.Text = row["PlantaDsc"].ToString();
                 SelPlanta.Text = row["Planta"].ToString();
-                SelProceso.Text = row["Area"].ToString();
+                SelProceso.Text = row["Proceso"].ToString();
+                SelArea.Text = row["Area"].ToString();
                 lblEquipo.Text = row["DscEquipo"].ToString();
                 lblCodEquipo.Text = row["Equipo"].ToString();
                 lblTurno.Text = row["TurnoDsc"].ToString();
@@ -89,7 +90,6 @@ namespace BitOp.CProcesos
             int i = GridView1.SelectedIndex;
             Label lblPlanilla = (Label)GridView1.Rows[i].FindControl("lblNroPlanilla");
             SelPlanilla.Text = lblPlanilla.Text;
-            GridView2.DataBind();
         }
 
     }

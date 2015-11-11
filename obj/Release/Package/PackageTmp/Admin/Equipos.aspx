@@ -114,6 +114,11 @@
         </asp:SqlDataSource>
     </p>
     <p>
+        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/AddMark_10580_inverse.png" />
+&nbsp;<a href="javascript:__doPostBack('LinkButton1','')">Agregar Equipo</a></p>
+    <p>
+        &nbsp;</p>
+    <p>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="Equipo" DataSourceID="BopDBEquipos" Width="70%">
             <Columns>
                 <asp:CommandField ButtonType="Image" CancelImageUrl="~/Images/StopHS.png" DeleteImageUrl="~/Images/DeleteHS.png" EditImageUrl="~/Images/EditTableHS.png" SelectImageUrl="~/Images/ZoomHS.png" ShowDeleteButton="True" ShowEditButton="True" UpdateImageUrl="~/Images/saveHS.png" CausesValidation="False" />
