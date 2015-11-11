@@ -28,5 +28,18 @@ namespace BitOp.Admin
         {
             MultiView1.ActiveViewIndex = 1;
         }
+
+        protected void FormView1_ItemInserting(object sender, FormViewInsertEventArgs e)
+        {
+            DropDownList DropDownPlanta = (DropDownList)FormView1.FindControl("DropDownListPlanta1");
+            e.Values["Planta"] = DropDownPlanta.SelectedValue;
+            DropDownList DropDownArea = (DropDownList)FormView1.FindControl("DropDownList4");
+            e.Values["Area"] = DropDownArea.SelectedValue;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GridView1.DataBind();
+        }
     }
 }

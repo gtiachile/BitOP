@@ -4,8 +4,7 @@
         .auto-style1 {
             width: 127px;
             color: #000000;
-            height: 42px;
-        }
+            }
         .auto-style2 {
             width: 2px;
         }
@@ -15,15 +14,13 @@
         .auto-style11 {
             width: 252px;
             text-align: left;
-            height: 42px;
-        }
+            }
         .auto-style12 {
             width: 112px;
             color: #000000;
-            height: 42px;
-        }
+            }
         .auto-style13 {
-            height: 42px;
+            height: 24px;
         }
         .auto-style14 {
             width: 127px;
@@ -46,25 +43,7 @@
         .auto-style18 {
             width: 249px;
         }
-        .auto-style19 {
-            width: 127px;
-            color: #000000;
-            height: 25px;
-        }
-        .auto-style20 {
-            width: 252px;
-            text-align: left;
-            height: 25px;
-        }
-        .auto-style21 {
-            width: 112px;
-            color: #000000;
-            height: 25px;
-        }
-        .auto-style22 {
-            height: 25px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <p class="auto-style10">
@@ -94,12 +73,12 @@
                                 <asp:SqlDataSource ID="BopDBFiltroPlanta" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Planta], [Descripción] FROM [Plantas]"></asp:SqlDataSource>
                             </td>
                             <td class="auto-style12" valign="top">Seleccione Area:</td>
-                            <td class="auto-style13" valign="top">
+                            <td valign="top">
                                 <asp:DropDownList ID="DropDownListAreas" runat="server" DataSourceID="BopDBAreasFiltro" DataTextField="Descripción" DataValueField="Area" AutoPostBack="True">
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="BopDBAreasFiltro" runat="server" ConnectionString="<%$ ConnectionStrings:BopDBConnectionString %>" SelectCommand="SELECT [Area], [Descripción] FROM [Areas] WHERE ([Planta] = @Planta) ORDER BY [Descripción]">
                                     <SelectParameters>
-                                        <asp:ControlParameter ControlID="DropDownListPlanta" Name="Planta" PropertyName="SelectedValue" Type="String" />
+                                        <asp:ControlParameter ControlID="DropDownListPlanta" Name="Planta" PropertyName="SelectedValue" Type="String" DefaultValue="VIE" />
                                     </SelectParameters>
                                 </asp:SqlDataSource>
                             </td>
